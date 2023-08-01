@@ -1,0 +1,1796 @@
+{
+    "openapi": "3.1.0",
+    "x-stoplight": {
+        "id": "1rfe8cvo2mr3h"
+    },
+    "info": {
+        "title": "CRM",
+        "version": "1.0",
+        "summary": "Official Manage API",
+        "contact": {
+            "name": "Manage Team",
+            "email": "api@manage.izt.app"
+        },
+        "description": ""
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/crm/locations": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-crm-locations",
+                "description": "Access accounts",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "locations"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "336c9v701x6kq"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Location",
+                                            "x-stoplight": {
+                                                "id": "ha8e8ltitqi9j"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-crm-locations",
+                "description": "Create an account",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LocationInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "locations"
+                ]
+            },
+            "parameters": []
+        },
+        "/crm/accounts": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            },
+                            "application/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-crm-accounts",
+                "description": "Access accounts",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "accounts"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "aw6dzdirm73fs"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Account",
+                                            "x-stoplight": {
+                                                "id": "vhucav2qksbjy"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-crm-accounts",
+                "description": "Create an account",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AccountInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            },
+            "parameters": []
+        },
+        "/crm/contacts": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-crm-contacts",
+                "description": "Access accounts",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "contacts"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "4wwg2pzgxr3zm"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Contact",
+                                            "x-stoplight": {
+                                                "id": "5bu7zxe4emz91"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-crm-contacts",
+                "description": "Create an account",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ContactInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "contacts"
+                ]
+            },
+            "parameters": []
+        },
+        "/crm/notes": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "notes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "qomp3d7rl2tim"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "abawb7mgrqxc3"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "symamt9b5tn03"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "uyw0vnxvuhihk"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "lien14iay0w2c"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-crm-notes",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-crm-notes",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "nqpncqlt5i99q"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Note",
+                                            "x-stoplight": {
+                                                "id": "6xw0h6yrmm056"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NoteInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "notes"
+                ]
+            }
+        },
+        "/crm/account/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Account"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getcrm-account-id",
+                "description": "Access accounts",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "accounts"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchcrm-account-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "trpudwx3ykx2f"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Account",
+                                            "x-stoplight": {
+                                                "id": "bv0cmjiisudgr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AccountEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "accounts"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deletecrm-account-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "856jh66yuvutu"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "tags": [
+                    "accounts"
+                ]
+            }
+        },
+        "/crm/location/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Location",
+                                            "x-stoplight": {
+                                                "id": "rwk6l8oiqo8l5"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getcrm-location-id",
+                "description": "Access accounts",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "locations"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchcrm-location-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "3e6rjuep1g29q"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Location",
+                                            "x-stoplight": {
+                                                "id": "m012zyaiqs7wl"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/LocationEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "locations"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deletecrm-location-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "jm861pyknrhpx"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "tags": [
+                    "locations"
+                ]
+            }
+        },
+        "/crm/contact/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Contact",
+                                            "x-stoplight": {
+                                                "id": "v56sc2hdvzzcy"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getcrm-contact-id",
+                "description": "Access contact",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "contacts"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchcrm-contact-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "qlqcgman8eo5n"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Contact",
+                                            "x-stoplight": {
+                                                "id": "jf16tjkar4cau"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ContactEditInput"
+                            }
+                        }
+                    }
+                },
+                "description": "Edit contact",
+                "tags": [
+                    "contacts"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deletecrm-contact-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "g4sfxb0z24cv8"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "description": "Delete contact",
+                "tags": [
+                    "contacts"
+                ]
+            }
+        },
+        "/crm/note/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "notes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "es80iymgrphto"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/NoteInput",
+                                            "x-stoplight": {
+                                                "id": "y5g1koehpb9ae"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-crm-note-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-crm-note-1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "cnupk1jfzpsd2"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Note",
+                                            "x-stoplight": {
+                                                "id": "67uzrmg2qfscg"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NoteEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "notes"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-crm-note-1",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "kk963kqtj0ad8"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "notes"
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AccountInput": {
+                "title": "Account Create Input",
+                "x-stoplight": {
+                    "id": "muc74uxpgo3nm"
+                },
+                "type": "object",
+                "x-tags": [
+                    "accounts",
+                    "locations",
+                    "notes",
+                    "contacts"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the account is active or inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the account."
+                    },
+                    "type": {
+                        "type": "boolean",
+                        "description": "The type of the account, where true = business and false = residential."
+                    },
+                    "primaryLocationId": {
+                        "type": "string",
+                        "description": "The ID of the primary location associated with the account."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The ID of the primary contact associated with the account."
+                    },
+                    "domain": {
+                        "type": "string",
+                        "description": "The domain name associated with the account."
+                    },
+                    "tax": {
+                        "type": "object",
+                        "description": "Information related to taxes for the account.",
+                        "properties": {
+                            "exempt": {
+                                "type": "boolean",
+                                "description": "Whether the account is exempt from taxes."
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The tax ID for the account."
+                            },
+                            "regionId": {
+                                "type": "string",
+                                "description": "The ID of the tax region associated with the account."
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "type",
+                    "primaryLocationId",
+                    "primaryContactId"
+                ]
+            },
+            "ContactInput": {
+                "title": "Contact Create Input",
+                "x-stoplight": {
+                    "id": "aucaxmyhv3nly"
+                },
+                "type": "object",
+                "x-tags": [
+                    "contacts"
+                ],
+                "properties": {
+                    "locationId": {
+                        "type": "string",
+                        "description": "The ID of the location associated with the contact."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the contact."
+                    },
+                    "name": {
+                        "type": "object",
+                        "description": "The name of the contact.",
+                        "required": [
+                            "first",
+                            "last"
+                        ],
+                        "properties": {
+                            "first": {
+                                "type": "string",
+                                "description": "The first name of the contact."
+                            },
+                            "last": {
+                                "type": "string",
+                                "description": "The last name of the contact."
+                            }
+                        }
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the contact."
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The phone number of the contact."
+                    }
+                },
+                "required": [
+                    "locationId",
+                    "name"
+                ]
+            },
+            "LocationInput": {
+                "title": "Location Create Input",
+                "x-stoplight": {
+                    "id": "d74ecczk9oicc"
+                },
+                "type": "object",
+                "x-tags": [
+                    "locations"
+                ],
+                "properties": {
+                    "accountId": {
+                        "description": "The unique identifier of the customer account associated with the location",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the location (active or inactive)",
+                        "type": "boolean"
+                    },
+                    "address": {
+                        "description": "The address information for the location",
+                        "type": "object",
+                        "required": [
+                            "address1",
+                            "city",
+                            "state",
+                            "zip"
+                        ],
+                        "properties": {
+                            "address1": {
+                                "description": "The first line of the address",
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "g6dqipc4de3t6"
+                                }
+                            },
+                            "address2": {
+                                "description": "The second line of the address",
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "ujledohnw9zdg"
+                                }
+                            },
+                            "city": {
+                                "description": "The city of the address",
+                                "type": "string"
+                            },
+                            "state": {
+                                "description": "The state or province of the address",
+                                "type": "string"
+                            },
+                            "zip": {
+                                "description": "The ZIP or postal code of the address",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "phone": {
+                        "description": "The phone number for the location",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "address"
+                ]
+            },
+            "NoteInput": {
+                "title": "Note Create Input",
+                "x-stoplight": {
+                    "id": "vxjlthqkhllcn"
+                },
+                "type": "object",
+                "x-tags": [
+                    "notes"
+                ],
+                "properties": {
+                    "resourceId": {
+                        "type": "string",
+                        "description": "The unique identifier for the user who created the note."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier for the account associated with the note."
+                    },
+                    "associatedId": {
+                        "type": "string",
+                        "description": "The unique identifier for the contact or ticket associated with the note."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the note. True for closed and false for open."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the note."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the note."
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date of the note.",
+                        "x-stoplight": {
+                            "id": "zueuhyjagvh69"
+                        }
+                    },
+                    "type": {
+                        "type": "integer",
+                        "description": "The type of the note.",
+                        "enum": [
+                            1
+                        ],
+                        "enumNames": [
+                            "General"
+                        ]
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "The unique identifiers for the attachments associated with the note.",
+                        "x-stoplight": {
+                            "id": "9wf5ovd5vxkja"
+                        },
+                        "items": {
+                            "x-stoplight": {
+                                "id": "jvavu71tkjx5j"
+                            },
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "resourceId",
+                    "title"
+                ]
+            },
+            "AccountEditInput": {
+                "title": "Account Edit Input",
+                "x-stoplight": {
+                    "id": "nlhpgdlwqiwx9"
+                },
+                "type": "object",
+                "x-tags": [
+                    "accounts"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the account is active or inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the account."
+                    },
+                    "type": {
+                        "type": "boolean",
+                        "description": "The type of the account, where true = business and false = residential."
+                    },
+                    "primaryLocationId": {
+                        "type": "string",
+                        "description": "The ID of the primary location associated with the account."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The ID of the primary contact associated with the account."
+                    },
+                    "domain": {
+                        "type": "string",
+                        "description": "The domain name associated with the account."
+                    },
+                    "tax": {
+                        "type": "object",
+                        "description": "Information related to taxes for the account.",
+                        "properties": {
+                            "exempt": {
+                                "type": "boolean",
+                                "description": "Whether the account is exempt from taxes."
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The tax ID for the account."
+                            },
+                            "regionId": {
+                                "type": "string",
+                                "description": "The ID of the tax region associated with the account."
+                            }
+                        }
+                    }
+                }
+            },
+            "ContactEditInput": {
+                "title": "Contact Edit Input",
+                "x-stoplight": {
+                    "id": "y6xpw7vemj5er"
+                },
+                "type": "object",
+                "properties": {
+                    "locationId": {
+                        "type": "string",
+                        "description": "The ID of the location associated with the contact."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the contact."
+                    },
+                    "name": {
+                        "type": "object",
+                        "description": "The name of the contact.",
+                        "properties": {
+                            "first": {
+                                "type": "string",
+                                "description": "The first name of the contact."
+                            },
+                            "last": {
+                                "type": "string",
+                                "description": "The last name of the contact."
+                            }
+                        }
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the contact."
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The phone number of the contact."
+                    }
+                },
+                "x-tags": [
+                    "contacts"
+                ]
+            },
+            "LocationEditInput": {
+                "title": "Location Edit Input",
+                "x-stoplight": {
+                    "id": "bga2adbe9r9tk"
+                },
+                "type": "object",
+                "x-tags": [
+                    "locations"
+                ],
+                "properties": {
+                    "accountId": {
+                        "description": "The unique identifier of the customer account associated with the location",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the location (active or inactive)",
+                        "type": "boolean"
+                    },
+                    "address": {
+                        "description": "The address information for the location",
+                        "type": "object",
+                        "properties": {
+                            "address1": {
+                                "description": "The first line of the address",
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "g6dqipc4de3t6"
+                                }
+                            },
+                            "address2": {
+                                "description": "The second line of the address",
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "ujledohnw9zdg"
+                                }
+                            },
+                            "city": {
+                                "description": "The city of the address",
+                                "type": "string"
+                            },
+                            "state": {
+                                "description": "The state or province of the address",
+                                "type": "string"
+                            },
+                            "zip": {
+                                "description": "The ZIP or postal code of the address",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "phone": {
+                        "description": "The phone number for the location",
+                        "type": "string"
+                    }
+                }
+            },
+            "NoteEditInput": {
+                "title": "Note Edit Input",
+                "x-stoplight": {
+                    "id": "degi1823oe7hm"
+                },
+                "type": "object",
+                "x-tags": [
+                    "notes"
+                ],
+                "properties": {
+                    "resourceId": {
+                        "type": "string",
+                        "description": "The unique identifier for the user who created the note."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier for the account associated with the note."
+                    },
+                    "associatedId": {
+                        "type": "string",
+                        "description": "The unique identifier for the contact or ticket associated with the note."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the note. True for closed and false for open."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the note."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the note."
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date of the note.",
+                        "x-stoplight": {
+                            "id": "22b2ebs129pnq"
+                        }
+                    },
+                    "type": {
+                        "type": "integer",
+                        "description": "The type of the note.",
+                        "enum": [
+                            1
+                        ],
+                        "enumNames": [
+                            "General"
+                        ]
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "The unique identifiers for the attachments associated with the note.",
+                        "x-stoplight": {
+                            "id": "vjiy8cltro80w"
+                        },
+                        "items": {
+                            "x-stoplight": {
+                                "id": "ho7scgxaztint"
+                            },
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "Account": {
+                "title": "Account",
+                "x-stoplight": {
+                    "id": "c13srm27zh0aw"
+                },
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the account."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the account is active or inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the account. (Only if type = true)"
+                    },
+                    "type": {
+                        "type": "boolean",
+                        "description": "The type of the account, where true = business and false = residential."
+                    },
+                    "primaryLocationId": {
+                        "type": "string",
+                        "description": "The ID of the primary location associated with the account."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The ID of the primary contact associated with the account."
+                    },
+                    "domain": {
+                        "type": "string",
+                        "description": "The domain name associated with the account."
+                    },
+                    "tax": {
+                        "type": "object",
+                        "description": "Information related to taxes for the account.",
+                        "properties": {
+                            "exempt": {
+                                "type": "boolean",
+                                "description": "Whether the account is exempt from taxes."
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "The tax ID for the account."
+                            },
+                            "regionId": {
+                                "type": "string",
+                                "description": "The ID of the tax region associated with the account."
+                            }
+                        },
+                        "required": [
+                            "exempt",
+                            "regionId"
+                        ]
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "type",
+                    "primaryLocationId",
+                    "primaryContactId"
+                ]
+            },
+            "Contact": {
+                "x-stoplight": {
+                    "id": "5bu7zxe4emz91"
+                },
+                "title": "Contact",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The ID of the contact.",
+                        "readOnly": true
+                    },
+                    "locationId": {
+                        "type": "string",
+                        "description": "The ID of the location associated with the contact."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the contact."
+                    },
+                    "name": {
+                        "type": "object",
+                        "description": "The name of the contact.",
+                        "required": [
+                            "first",
+                            "last"
+                        ],
+                        "properties": {
+                            "first": {
+                                "type": "string",
+                                "description": "The first name of the contact."
+                            },
+                            "last": {
+                                "type": "string",
+                                "description": "The last name of the contact."
+                            }
+                        }
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the contact."
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "The phone number of the contact."
+                    }
+                },
+                "required": [
+                    "_id",
+                    "locationId",
+                    "status",
+                    "name"
+                ]
+            },
+            "Location": {
+                "x-stoplight": {
+                    "id": "ha8e8ltitqi9j"
+                },
+                "title": "Location",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier of the location",
+                        "type": "string"
+                    },
+                    "accountId": {
+                        "description": "The unique identifier of the customer account associated with the location",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the location (active or inactive)",
+                        "type": "boolean"
+                    },
+                    "address": {
+                        "description": "The address information for the location",
+                        "type": "object",
+                        "required": [
+                            "address1",
+                            "city",
+                            "state",
+                            "zip"
+                        ],
+                        "properties": {
+                            "address1": {
+                                "description": "The first line of the address",
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "g6dqipc4de3t6"
+                                }
+                            },
+                            "address2": {
+                                "description": "The second line of the address",
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "ujledohnw9zdg"
+                                }
+                            },
+                            "city": {
+                                "description": "The city of the address",
+                                "type": "string"
+                            },
+                            "state": {
+                                "description": "The state or province of the address",
+                                "type": "string"
+                            },
+                            "zip": {
+                                "description": "The ZIP or postal code of the address",
+                                "type": "integer"
+                            }
+                        }
+                    },
+                    "phone": {
+                        "description": "The phone number for the location",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "accountId",
+                    "status",
+                    "address"
+                ]
+            },
+            "Note": {
+                "x-stoplight": {
+                    "id": "6xw0h6yrmm056"
+                },
+                "title": "Note",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the note."
+                    },
+                    "resourceId": {
+                        "type": "string",
+                        "description": "The unique identifier for the user who created the note."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier for the account associated with the note."
+                    },
+                    "associatedId": {
+                        "type": "string",
+                        "description": "The unique identifier for the contact or ticket associated with the note."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the note. True for closed and false for open."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the note."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the note."
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date of the note.",
+                        "x-stoplight": {
+                            "id": "t0rh07rgvz100"
+                        }
+                    },
+                    "type": {
+                        "type": "integer",
+                        "description": "The type of the note.",
+                        "enum": [
+                            1
+                        ],
+                        "enumNames": [
+                            "General"
+                        ]
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "The unique identifiers for the attachments associated with the note.",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "e1zwl5ak02s3e"
+                            },
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "title",
+                    "date"
+                ]
+            }
+        },
+        "parameters": {
+            "include": {
+                "name": "include",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "name,status"
+                },
+                "description": "Comma separated value of the name of fields to include in the search request"
+            }
+        },
+        "securitySchemes": {
+            "mkey": {
+                "name": "mkey",
+                "type": "apiKey",
+                "in": "header",
+                "description": ""
+            }
+        }
+    },
+    "x-internal": false,
+    "tags": [
+        {
+            "name": "accounts"
+        },
+        {
+            "name": "contacts"
+        },
+        {
+            "name": "locations"
+        },
+        {
+            "name": "notes"
+        }
+    ]
+}

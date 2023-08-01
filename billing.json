@@ -1,0 +1,4509 @@
+{
+    "openapi": "3.1.0",
+    "x-stoplight": {
+        "id": "v8e041rtm34hc"
+    },
+    "info": {
+        "title": "Billing",
+        "version": "1.0",
+        "summary": "Official Manage API",
+        "contact": {
+            "name": "Manage Team",
+            "email": "api@manage.izt.app"
+        },
+        "description": ""
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/billing/agreements": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "vt33rrbkdluln"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "ra6yghpg4iwsz"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "oejz0c2awg33j"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "5om0z9mprein4"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "s3mnawx1sl6bp"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-agreements",
+                "description": "Billing agreements",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "agreements"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "7pfimoncw4hxr"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Agreement",
+                                            "x-stoplight": {
+                                                "id": "szwu5r95hwzxr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-billing-agreements",
+                "description": "Create an agreement",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AgreementInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "agreements"
+                ]
+            },
+            "parameters": []
+        },
+        "/billing/payments": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-payments",
+                "description": "Billing payments",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "payments"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "2v113gwg5yjxo"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Payment",
+                                            "x-stoplight": {
+                                                "id": "jdazm79b7y2k9"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-billing-payments",
+                "description": "Create an payment",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PaymentInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "payments"
+                ]
+            },
+            "parameters": []
+        },
+        "/billing/allocations": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-allocations",
+                "description": "Billing allocations",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "allocations"
+                ],
+                "requestBody": {
+                    "content": {}
+                }
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "2ctyageozaj1o"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Allocation",
+                                            "x-stoplight": {
+                                                "id": "4swem0ehqbije"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-billing-allocations",
+                "description": "Create an allocation",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AllocationInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "allocations"
+                ]
+            },
+            "parameters": []
+        },
+        "/billing/invoices": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-invoices",
+                "description": "Billing invoices",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "invoices"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "ej4ksatoesljj"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Invoice",
+                                            "x-stoplight": {
+                                                "id": "k5llbg082jco9"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-billing-invoices",
+                "description": "Create an invoice",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InvoiceInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "invoices"
+                ]
+            },
+            "parameters": []
+        },
+        "/billing/invoiceitems": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "invoiceitems"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "ssfb9fs2ru7b5"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "m8unk8bi7ek2o"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "l8r0pclelwlh1"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "tdqsgsgmgfiwb"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "eknet608l77bw"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-invoiceitems",
+                "description": "",
+                "parameters": [],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-billing-invoiceitems",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "$ref": "#/components/schemas/InvoiceItemInput",
+                                            "x-stoplight": {
+                                                "id": "83f65t5hng10f"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/InvoiceItem",
+                                            "x-stoplight": {
+                                                "id": "77ihglbu137aa"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InvoiceItemInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "invoiceitems"
+                ]
+            }
+        },
+        "/billing/services": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "sbm0z9outh7v6"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "a02e3z898xgye"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "3fswvv7pusisy"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "t70a1503csfq2"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "qwwn2poo7wp95"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-services",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-billing-services",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "nyfd1pt8s9915"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Service",
+                                            "x-stoplight": {
+                                                "id": "dz2q3eaakhcu4"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ServiceInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "services"
+                ]
+            }
+        },
+        "/billing/tax/categorys": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "tax.categories"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "gd55lm8dflsu4"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "dn28826vueltq"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "gt6evsk160s2r"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "2psckx3gmdw92"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "bfsdew8m9hdww"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-categorys",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-billing-tax-categorys",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "4qfx6461jcqaq"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Category",
+                                            "x-stoplight": {
+                                                "id": "tple77d9ncu5a"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.categories"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        },
+        "/billing/tax/groups": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "tax.groups"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "x-stoplight": {
+                                                "id": "fyjuwtu7xmirv"
+                                            },
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "i4hqxipk4md7d"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "xwt7uds9mxzq8"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "y55ubkc8nrhoa"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "myc5362ucmjn6"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-groups",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-billing-tax-groups",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "b1pbu8awfajb4"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Group",
+                                            "x-stoplight": {
+                                                "id": "4auu9pfld0rft"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GroupInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.groups"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        },
+        "/billing/tax/rates": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "tax.rates"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "ohkzz2fj8auo9"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "ifdyr1lmqbs1r"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "f9z43oso4hcie"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "vqa6uchtk8ztb"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "njsydlgygs4sk"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-rates",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-billing-tax-rates",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "e9t5rwwm8mnmr"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Rate",
+                                            "x-stoplight": {
+                                                "id": "vbdksc8gujuq9"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RateInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.rates"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        },
+        "/billing/tax/regions": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "tax.regions"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "k5nc9uwn0mmvv"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "63dh2m9mesv70"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "zt8sgyp7ktcd8"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "ijp7jixknztle"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "q4ejbkkvwsyq0"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-regions",
+                "parameters": [],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-billing-tax-regions",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "efiprflzx1etx"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Region",
+                                            "x-stoplight": {
+                                                "id": "gxou03sg61dit"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RegionInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.regions"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        },
+        "/billing/agreement/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Agreement"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getbilling-agreement-id",
+                "description": "Create Edit Delete agreements",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "agreements"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchbilling-agreement-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "04txphslbsezy"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Agreement",
+                                            "x-stoplight": {
+                                                "id": "kv5s0v0ebtaxu"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AgreementEditInput"
+                            }
+                        },
+                        "application/xml": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AgreementInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "agreements"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deletebilling-agreement-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "7tw2maael7g05"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "tags": [
+                    "agreements"
+                ]
+            }
+        },
+        "/billing/payment/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "ec0lx323u1l22"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Payment",
+                                            "x-stoplight": {
+                                                "id": "xyc4krtz7gzbt"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "2xzlmfoa51t84"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Service",
+                                            "x-stoplight": {
+                                                "id": "ft09j5ek0t91p"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getbilling-payment-id",
+                "description": "get payment",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "payments"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "67taoeroqug5p"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Payment",
+                                            "x-stoplight": {
+                                                "id": "lmzouqshski5v"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PaymentEditInput"
+                            }
+                        }
+                    }
+                },
+                "operationId": "patchbilling-payment-id",
+                "description": "patch payment",
+                "tags": [
+                    "payments"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deletebilling-payment-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "2683r8iqbrkot"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "description": "delete payment",
+                "tags": [
+                    "payments"
+                ]
+            }
+        },
+        "/billing/allocation/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getbilling-allocation-id",
+                "description": "Create Edit Delete allocations",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "allocations"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchbilling-allocation-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "4is52ks7ew77g"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Allocation",
+                                            "x-stoplight": {
+                                                "id": "bsgq2va1qd2pe"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AllocationEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "allocations"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "3g9mgd7d30xct"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "operationId": "deletebilling-allocation-id",
+                "description": "",
+                "tags": [
+                    "allocations"
+                ]
+            }
+        },
+        "/billing/invoice/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "tv0efe90g5l6l"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Invoice",
+                                            "x-stoplight": {
+                                                "id": "g4zcg7iq1zmtl"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getbilling-invoice-id",
+                "description": "Create Edit Delete invoices",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "invoices"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "puie4vewphj33"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Invoice",
+                                            "x-stoplight": {
+                                                "id": "y86330uk7oiiu"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InvoiceEditInput"
+                            }
+                        }
+                    }
+                },
+                "operationId": "patchbilling-invoice-id",
+                "tags": [
+                    "invoices"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "d8mpnyggryece"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "operationId": "deletebilling-invoice-id",
+                "tags": [
+                    "invoices"
+                ]
+            }
+        },
+        "/billing/invoiceitem/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "invoiceitems"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "o68sp6dwo0e93"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/InvoiceItem",
+                                            "x-stoplight": {
+                                                "id": "6fayy3u48rlrx"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-invoiceitem-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-billing-invoiceitem-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "7t2ne80aooh6x"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/InvoiceItem",
+                                            "x-stoplight": {
+                                                "id": "icfvzhhg7tpzp"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/InvoiceItemEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "invoiceitems"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-billing-invoiceitem-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "eok1yqfrtl3xc"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "invoiceitems"
+                ]
+            }
+        },
+        "/billing/service/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "services"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "1bf6zwl3fmug9"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Service",
+                                            "x-stoplight": {
+                                                "id": "n1d1beqoclew2"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-service-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-billing-service-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "gz0x4z14y7cze"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Service",
+                                            "x-stoplight": {
+                                                "id": "0osihud25pcsd"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ServiceEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "services"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-billing-service-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "nsetoxjac34lt"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "services"
+                ]
+            }
+        },
+        "/billing/tax/category/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "tax.categories"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "ut44c7tntr8e9"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Category",
+                                            "x-stoplight": {
+                                                "id": "t3sh6mvumjxpq"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-category-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-billing-tax-category-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "779l01v4xia4c"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Category",
+                                            "x-stoplight": {
+                                                "id": "qvncy215w0p9x"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CategoryEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.categories"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-billing-tax-category-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "d7w2t7xhhx0k2"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.categories"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        },
+        "/billing/tax/group/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "tax.groups"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "r8jbsbscpw4f5"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Group",
+                                            "x-stoplight": {
+                                                "id": "818wcllro9tcm"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-group-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-billing-tax-group-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "x1o2j24hk7dzn"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Group",
+                                            "x-stoplight": {
+                                                "id": "ria8jvh2gx9bd"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/GroupEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.groups"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-billing-tax-group-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "qm3r5wx7pcn7v"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.groups"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        },
+        "/billing/tax/rate/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "tax.rates"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "fmk3tovhwbemg"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Rate",
+                                            "x-stoplight": {
+                                                "id": "uyo3jo1bxnlxh"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-rate-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-billing-tax-rate-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "1jk6y89894oew"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Rate",
+                                            "x-stoplight": {
+                                                "id": "uvlu93lbptock"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RateEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.rates"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-billing-tax-rate-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "mzk930vx6d162"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.rates"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        },
+        "/billing/tax/region/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "tax.regions"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "uadfdwvct0r9u"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Region",
+                                            "x-stoplight": {
+                                                "id": "jkue4x7mjz8o1"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-billing-tax-region-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "description": ""
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-billing-tax-region-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "e8bziszs4bg09"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Region",
+                                            "x-stoplight": {
+                                                "id": "rqsoohhsvjewx"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RateEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.regions"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-billing-tax-region-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "hzso79asx4pmh"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tax.regions"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AgreementInput": {
+                "title": "Agreement Create Input",
+                "x-stoplight": {
+                    "id": "47ts33bkgd8as"
+                },
+                "type": "object",
+                "x-tags": [
+                    "agreements"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the agreement (active or inactive)."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the agreement."
+                    },
+                    "period": {
+                        "type": "integer",
+                        "description": "The billing period of the agreement.",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "enumNames": [
+                            "Day",
+                            "Week",
+                            "Month",
+                            "Quarter",
+                            "Bi-Year",
+                            "Year"
+                        ]
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The start date of the agreement."
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The end date of the agreement."
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Any notes or comments about the agreement."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The ID of the account associated with the agreement."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The ID of the primary contact associated with the agreement."
+                    },
+                    "services": {
+                        "type": "array",
+                        "description": "The services associated with the agreement.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "The ID of the service."
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "The quantity of the service."
+                                },
+                                "price": {
+                                    "type": "string",
+                                    "description": "The price of the service.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "cost": {
+                                    "type": "string",
+                                    "description": "The cost of the service.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "startDate": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "The start date of the service."
+                                },
+                                "endDate": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "The end date of the service."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the service."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "The description of the service."
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "quantity",
+                                "startDate"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "period",
+                    "startDate",
+                    "accountId"
+                ]
+            },
+            "AllocationInput": {
+                "title": "Allocation Create Input",
+                "x-stoplight": {
+                    "id": "uhv34qoj1x8z4"
+                },
+                "type": "object",
+                "x-tags": [
+                    "allocations"
+                ],
+                "properties": {
+                    "status": {
+                        "description": "The status of the allocation.",
+                        "type": "boolean"
+                    },
+                    "invoiceId": {
+                        "description": "The ID of the invoice that the payment is allocated to.",
+                        "type": "string"
+                    },
+                    "paymentId": {
+                        "description": "The ID of the payment that is allocated to the invoice.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of the payment that is allocated to the invoice.",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "notes": {
+                        "description": "Additional notes about the allocation.",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The date of the allocation.",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "status",
+                    "invoiceId",
+                    "paymentId",
+                    "amount"
+                ]
+            },
+            "InvoiceInput": {
+                "title": "Invoice Create Input",
+                "x-stoplight": {
+                    "id": "d4ud05r5zaf1x"
+                },
+                "type": "object",
+                "x-tags": [
+                    "invoices"
+                ],
+                "properties": {
+                    "accountId": {
+                        "description": "The unique identifier for the account the invoice belongs to",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The payment status of the invoice",
+                        "type": "boolean",
+                        "enum": [
+                            true,
+                            false
+                        ]
+                    },
+                    "notes": {
+                        "description": "Additional notes related to the invoice",
+                        "type": "string"
+                    },
+                    "items": {
+                        "description": "Array of id's of InvoiceItems",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "dueDate": {
+                        "description": "The date by which payment for the invoice is due",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "date": {
+                        "description": "The date the invoice was issued",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "accountId"
+                ]
+            },
+            "InvoiceItemInput": {
+                "title": "InvoiceItem Create Input",
+                "x-stoplight": {
+                    "id": "3l4vxgl8cqkex"
+                },
+                "type": "object",
+                "x-tags": [
+                    "invoiceitems"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Indicates whether the invoice item has been posted or not."
+                    },
+                    "invoiceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the invoice that the item belongs to."
+                    },
+                    "period": {
+                        "type": "object",
+                        "description": "The period associated with the invoice item.",
+                        "required": [
+                            "start"
+                        ],
+                        "properties": {
+                            "start": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The start date of the period associated with the invoice item."
+                            },
+                            "end": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The end date of the period associated with the invoice item."
+                            }
+                        }
+                    },
+                    "type": {
+                        "type": "integer",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "description": "The type of the invoice item."
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "description": "The quantity of the invoice item."
+                    },
+                    "price": {
+                        "type": "string",
+                        "description": "The price of the invoice item.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "cost": {
+                        "type": "string",
+                        "description": "The cost of the invoice item.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the invoice item."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the invoice item."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the invoice item."
+                    },
+                    "serviceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the service associated with the invoice item."
+                    },
+                    "agreementId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agreement associated with the invoice item."
+                    },
+                    "taxCategoryId": {
+                        "type": "string",
+                        "description": "The unique identifier of the tax category associated with the invoice item."
+                    }
+                },
+                "required": [
+                    "period",
+                    "type",
+                    "quantity",
+                    "price",
+                    "name",
+                    "description",
+                    "accountId",
+                    "serviceId",
+                    "agreementId",
+                    "taxCategoryId"
+                ]
+            },
+            "PaymentInput": {
+                "title": "Payment Create Input",
+                "x-stoplight": {
+                    "id": "gnl50n90cr4lu"
+                },
+                "type": "object",
+                "x-tags": [
+                    "payments"
+                ],
+                "properties": {
+                    "accountId": {
+                        "description": "The unique identifier for the account associated with the payment.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of the payment.",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "method": {
+                        "description": "The method used to make the payment.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        "enumNames": [
+                            "Check",
+                            "Card",
+                            "ACH",
+                            "PayPal",
+                            "Crypto"
+                        ]
+                    },
+                    "reference": {
+                        "description": "A reference number or description for the payment.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the payment.",
+                        "type": "boolean"
+                    },
+                    "date": {
+                        "description": "The date the payment was made.",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "amount",
+                    "method"
+                ]
+            },
+            "ServiceInput": {
+                "title": "Service Create Input",
+                "x-stoplight": {
+                    "id": "4y6kfug2krtqp"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "Indicates if the service is active",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the service",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the service",
+                        "type": "string"
+                    },
+                    "invoiceDescription": {
+                        "description": "A description of the service to be shown on invoices",
+                        "type": "string"
+                    },
+                    "period": {
+                        "description": "The period in which the service is billed",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "enumLabels": [
+                            "Day",
+                            "Week",
+                            "Month",
+                            "Quarter",
+                            "Bi-Annually",
+                            "Year"
+                        ]
+                    },
+                    "cost": {
+                        "description": "The cost of the service",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "price": {
+                        "description": "The price of the service",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "taxCategoryId": {
+                        "description": "The ID of the tax category for the service",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "status",
+                    "name",
+                    "description",
+                    "invoiceDescription",
+                    "period",
+                    "cost",
+                    "price"
+                ],
+                "x-tags": [
+                    "services"
+                ]
+            },
+            "AgreementEditInput": {
+                "title": "Agreement Edit Input",
+                "x-stoplight": {
+                    "id": "9mk479pp5r60u"
+                },
+                "type": "object",
+                "x-tags": [
+                    "agreements"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the agreement (active or inactive)."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the agreement."
+                    },
+                    "period": {
+                        "type": "integer",
+                        "description": "The billing period of the agreement.",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "enumNames": [
+                            "Day",
+                            "Week",
+                            "Month",
+                            "Quarter",
+                            "Bi-Year",
+                            "Year"
+                        ]
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The start date of the agreement."
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The end date of the agreement."
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Any notes or comments about the agreement."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The ID of the account associated with the agreement."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The ID of the primary contact associated with the agreement."
+                    },
+                    "services": {
+                        "type": "array",
+                        "description": "The services associated with the agreement.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "The ID of the service."
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "The quantity of the service."
+                                },
+                                "price": {
+                                    "type": "string",
+                                    "description": "The price of the service.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "cost": {
+                                    "type": "string",
+                                    "description": "The cost of the service.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "startDate": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "The start date of the service."
+                                },
+                                "endDate": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "The end date of the service."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the service."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "The description of the service."
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "AllocationEditInput": {
+                "title": "Allocation Edit Input",
+                "x-stoplight": {
+                    "id": "2b8bf8hn1anxj"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the allocation.",
+                        "type": "boolean"
+                    },
+                    "invoiceId": {
+                        "description": "The ID of the invoice that the payment is allocated to.",
+                        "type": "string"
+                    },
+                    "paymentId": {
+                        "description": "The ID of the payment that is allocated to the invoice.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of the payment that is allocated to the invoice.",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "notes": {
+                        "description": "Additional notes about the allocation.",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The date of the allocation.",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "type": {
+                        "description": "The type of the allocation.",
+                        "type": "integer"
+                    }
+                },
+                "x-tags": [
+                    "allocations"
+                ]
+            },
+            "InvoiceEditInput": {
+                "title": "Invoice Edit Input",
+                "x-stoplight": {
+                    "id": "8e7ygx5y23exo"
+                },
+                "type": "object",
+                "x-tags": [
+                    "invoices"
+                ],
+                "properties": {
+                    "accountId": {
+                        "description": "The unique identifier for the account the invoice belongs to",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The payment status of the invoice",
+                        "type": "boolean",
+                        "enum": [
+                            true,
+                            false
+                        ]
+                    },
+                    "notes": {
+                        "description": "Additional notes related to the invoice",
+                        "type": "string"
+                    },
+                    "items": {
+                        "description": "The line items on the invoice",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Unique identifier of the invoice item."
+                                },
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the invoice item has been posted or not."
+                                },
+                                "invoiceId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the invoice that the item belongs to."
+                                },
+                                "period": {
+                                    "type": "object",
+                                    "description": "The period associated with the invoice item.",
+                                    "properties": {
+                                        "start": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "description": "The start date of the period associated with the invoice item."
+                                        },
+                                        "end": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "description": "The end date of the period associated with the invoice item."
+                                        }
+                                    }
+                                },
+                                "type": {
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "description": "The type of the invoice item."
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "The quantity of the invoice item."
+                                },
+                                "price": {
+                                    "type": "string",
+                                    "description": "The price of the invoice item.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "cost": {
+                                    "type": "string",
+                                    "description": "The cost of the invoice item.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the invoice item."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "The description of the invoice item."
+                                },
+                                "accountId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the account associated with the invoice item."
+                                },
+                                "serviceId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the service associated with the invoice item."
+                                },
+                                "agreementId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the agreement associated with the invoice item."
+                                },
+                                "taxCategoryId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the tax category associated with the invoice item."
+                                }
+                            }
+                        }
+                    },
+                    "dueDate": {
+                        "description": "The date by which payment for the invoice is due",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "date": {
+                        "description": "The date the invoice was issued",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "InvoiceItemEditInput": {
+                "title": "InvoiceItem Edit Input",
+                "x-stoplight": {
+                    "id": "mb3bqdpqwvcy6"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Indicates whether the invoice item has been posted or not."
+                    },
+                    "invoiceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the invoice that the item belongs to."
+                    },
+                    "period": {
+                        "type": "object",
+                        "description": "The period associated with the invoice item.",
+                        "properties": {
+                            "start": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The start date of the period associated with the invoice item."
+                            },
+                            "end": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The end date of the period associated with the invoice item."
+                            }
+                        }
+                    },
+                    "type": {
+                        "type": "integer",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "description": "The type of the invoice item."
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "description": "The quantity of the invoice item."
+                    },
+                    "price": {
+                        "type": "string",
+                        "description": "The price of the invoice item.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "cost": {
+                        "type": "string",
+                        "description": "The cost of the invoice item.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the invoice item."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the invoice item."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the invoice item."
+                    },
+                    "serviceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the service associated with the invoice item."
+                    },
+                    "agreementId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agreement associated with the invoice item."
+                    },
+                    "taxCategoryId": {
+                        "type": "string",
+                        "description": "The unique identifier of the tax category associated with the invoice item."
+                    }
+                },
+                "x-tags": [
+                    "invoiceitems"
+                ]
+            },
+            "PaymentEditInput": {
+                "title": "Payment Edit Input",
+                "x-stoplight": {
+                    "id": "etqhvty2hk1lw"
+                },
+                "type": "object",
+                "properties": {
+                    "accountId": {
+                        "description": "The unique identifier for the account associated with the payment.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of the payment.",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "method": {
+                        "description": "The method used to make the payment.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        "enumNames": [
+                            "Check",
+                            "Card",
+                            "ACH",
+                            "PayPal",
+                            "Crypto"
+                        ]
+                    },
+                    "reference": {
+                        "description": "A reference number or description for the payment.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the payment.",
+                        "type": "boolean"
+                    },
+                    "date": {
+                        "description": "The date the payment was made.",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "x-tags": [
+                    "payments"
+                ]
+            },
+            "ServiceEditInput": {
+                "title": "Service Edit Input",
+                "x-stoplight": {
+                    "id": "1289b5ia4nya4"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "Indicates if the service is active",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the service",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the service",
+                        "type": "string"
+                    },
+                    "invoiceDescription": {
+                        "description": "A description of the service to be shown on invoices",
+                        "type": "string"
+                    },
+                    "period": {
+                        "description": "The period in which the service is billed",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "enumLabels": [
+                            "Day",
+                            "Week",
+                            "Month",
+                            "Quarter",
+                            "Bi-Annually",
+                            "Year"
+                        ]
+                    },
+                    "cost": {
+                        "description": "The cost of the service",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "price": {
+                        "description": "The price of the service",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "taxCategoryId": {
+                        "description": "The ID of the tax category for the service",
+                        "type": "string"
+                    }
+                },
+                "x-tags": [
+                    "services"
+                ]
+            },
+            "CategoryInput": {
+                "title": "Category Create Input",
+                "x-stoplight": {
+                    "id": "w41uqgkt2tt58"
+                },
+                "type": "object",
+                "x-tags": [
+                    "tax.categories"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "sg2946d8xklk0"
+                        },
+                        "description": "The status of the category (active or inactive)."
+                    },
+                    "name": {
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "ycqdkd6m670c7"
+                        },
+                        "description": "The name of the category."
+                    }
+                },
+                "required": [
+                    "name"
+                ]
+            },
+            "GroupInput": {
+                "title": "Group Create Input",
+                "x-stoplight": {
+                    "id": "ffa12umrvewuf"
+                },
+                "type": "object",
+                "x-tags": [
+                    "tax.groups"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the tax group is active or not."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the tax group."
+                    },
+                    "rates": {
+                        "type": "array",
+                        "description": "The tax rates associated with the tax group.",
+                        "items": {
+                            "type": "string",
+                            "description": "The ID of a tax rate associated with the group."
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "rates"
+                ]
+            },
+            "RateInput": {
+                "title": "Rate Create Input",
+                "x-stoplight": {
+                    "id": "u9l1kb81jxurd"
+                },
+                "type": "object",
+                "x-tags": [
+                    "tax.rates"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the rate is active or inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the rate."
+                    },
+                    "rate": {
+                        "type": "string",
+                        "description": "The rate as a percentage, represented as a string.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    }
+                },
+                "required": [
+                    "name",
+                    "rate"
+                ]
+            },
+            "RegionInput": {
+                "title": "Region Create Input",
+                "x-stoplight": {
+                    "id": "blz7rcoderwvh"
+                },
+                "type": "object",
+                "x-tags": [
+                    "tax.regions"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the region. True for active and false for inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the region."
+                    },
+                    "matrix": {
+                        "type": "array",
+                        "description": "The tax matrix for this region.",
+                        "items": {
+                            "type": "object",
+                            "x-stoplight": {
+                                "id": "dctcwku70mjch"
+                            },
+                            "properties": {
+                                "$categoryId": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "b65ptuitotyt7"
+                                    },
+                                    "description": "GroupId"
+                                }
+                            },
+                            "required": [
+                                "$categoryId"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "name",
+                    "matrix"
+                ]
+            },
+            "CategoryEditInput": {
+                "title": "Category Edit Input",
+                "x-stoplight": {
+                    "id": "hom4xg23orso9"
+                },
+                "type": "object",
+                "x-tags": [
+                    "tax.categories"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "sg2946d8xklk0"
+                        },
+                        "description": "The status of the category (active or inactive)."
+                    },
+                    "name": {
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "ycqdkd6m670c7"
+                        },
+                        "description": "The name of the category."
+                    }
+                }
+            },
+            "GroupEditInput": {
+                "title": "Group Edit Input",
+                "x-stoplight": {
+                    "id": "kx7fmg3k5g5sg"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the tax group is active or not."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the tax group."
+                    },
+                    "rates": {
+                        "type": "array",
+                        "description": "The tax rates associated with the tax group.",
+                        "items": {
+                            "type": "string",
+                            "description": "The ID of a tax rate associated with the group."
+                        }
+                    }
+                },
+                "x-tags": [
+                    "tax.groups"
+                ]
+            },
+            "RateEditInput": {
+                "title": "Rate Edit Input",
+                "x-stoplight": {
+                    "id": "czjujb1dxqkta"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the rate is active or inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the rate."
+                    },
+                    "rate": {
+                        "type": "string",
+                        "description": "The rate as a percentage, represented as a string.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    }
+                },
+                "x-tags": [
+                    "tax.rates"
+                ]
+            },
+            "RegionEditInput": {
+                "title": "Region Edit Input",
+                "x-stoplight": {
+                    "id": "xn0q5nx1wi5jc"
+                },
+                "type": "object",
+                "x-tags": [
+                    "tax.regions"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the region. True for active and false for inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the region."
+                    },
+                    "matrix": {
+                        "type": "array",
+                        "description": "The tax matrix for this region.",
+                        "items": {
+                            "type": "object",
+                            "x-stoplight": {
+                                "id": "dctcwku70mjch"
+                            },
+                            "properties": {
+                                "$categoryId": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "b65ptuitotyt7"
+                                    },
+                                    "description": "GroupId"
+                                }
+                            },
+                            "required": [
+                                "$categoryId"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Agreement": {
+                "title": "Billing\\Agreement",
+                "x-stoplight": {
+                    "id": "enwzh916uyccf"
+                },
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the agreement."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the agreement (active or inactive)."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the agreement."
+                    },
+                    "period": {
+                        "type": "integer",
+                        "description": "The billing period of the agreement.",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "enumNames": [
+                            "Day",
+                            "Week",
+                            "Month",
+                            "Quarter",
+                            "Bi-Year",
+                            "Year"
+                        ]
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The start date of the agreement."
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The end date of the agreement."
+                    },
+                    "notes": {
+                        "type": "string",
+                        "description": "Any notes or comments about the agreement."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The ID of the account associated with the agreement."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The ID of the primary contact associated with the agreement."
+                    },
+                    "services": {
+                        "type": "array",
+                        "description": "The services associated with the agreement.",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "The ID of the service."
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "The quantity of the service."
+                                },
+                                "price": {
+                                    "type": "string",
+                                    "description": "The price of the service.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "cost": {
+                                    "type": "string",
+                                    "description": "The cost of the service.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "startDate": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "The start date of the service."
+                                },
+                                "endDate": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "The end date of the service."
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the service."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "The description of the service."
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "quantity",
+                                "startDate"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name",
+                    "period",
+                    "startDate",
+                    "accountId"
+                ]
+            },
+            "Allocation": {
+                "x-stoplight": {
+                    "id": "4swem0ehqbije"
+                },
+                "title": "Allocation",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier of the allocation.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "8l6iz2ne80b2g"
+                        }
+                    },
+                    "status": {
+                        "description": "The status of the allocation.",
+                        "type": "boolean"
+                    },
+                    "invoiceId": {
+                        "description": "The ID of the invoice that the payment is allocated to.",
+                        "type": "string"
+                    },
+                    "paymentId": {
+                        "description": "The ID of the payment that is allocated to the invoice.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of the payment that is allocated to the invoice.",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "notes": {
+                        "description": "Additional notes about the allocation.",
+                        "type": "string"
+                    },
+                    "date": {
+                        "description": "The date of the allocation.",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "type": {
+                        "description": "The type of the allocation.",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "invoiceId",
+                    "paymentId",
+                    "amount",
+                    "date",
+                    "type"
+                ]
+            },
+            "Invoice": {
+                "x-stoplight": {
+                    "id": "k5llbg082jco9"
+                },
+                "title": "Invoice",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier for the invoice",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The payment status of the invoice",
+                        "type": "boolean",
+                        "enum": [
+                            true,
+                            false
+                        ]
+                    },
+                    "date": {
+                        "description": "The date the invoice was issued",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "dueDate": {
+                        "description": "The date by which payment for the invoice is due",
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "accountId": {
+                        "description": "The unique identifier for the account the invoice belongs to",
+                        "type": "string"
+                    },
+                    "notes": {
+                        "description": "Additional notes related to the invoice",
+                        "type": "string"
+                    },
+                    "items": {
+                        "description": "The line items on the invoice",
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "Unique identifier of the invoice item."
+                                },
+                                "status": {
+                                    "type": "boolean",
+                                    "description": "Indicates whether the invoice item has been posted or not."
+                                },
+                                "invoiceId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the invoice that the item belongs to."
+                                },
+                                "period": {
+                                    "type": "object",
+                                    "description": "The period associated with the invoice item.",
+                                    "required": [
+                                        "start"
+                                    ],
+                                    "properties": {
+                                        "start": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "description": "The start date of the period associated with the invoice item."
+                                        },
+                                        "end": {
+                                            "type": "string",
+                                            "format": "date-time",
+                                            "description": "The end date of the period associated with the invoice item."
+                                        }
+                                    }
+                                },
+                                "type": {
+                                    "type": "integer",
+                                    "enum": [
+                                        1,
+                                        2,
+                                        3
+                                    ],
+                                    "description": "The type of the invoice item."
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "The quantity of the invoice item."
+                                },
+                                "price": {
+                                    "type": "string",
+                                    "description": "The price of the invoice item.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "cost": {
+                                    "type": "string",
+                                    "description": "The cost of the invoice item.",
+                                    "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                                },
+                                "name": {
+                                    "type": "string",
+                                    "description": "The name of the invoice item."
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "The description of the invoice item."
+                                },
+                                "accountId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the account associated with the invoice item."
+                                },
+                                "serviceId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the service associated with the invoice item."
+                                },
+                                "agreementId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the agreement associated with the invoice item."
+                                },
+                                "taxCategoryId": {
+                                    "type": "string",
+                                    "description": "The unique identifier of the tax category associated with the invoice item."
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "status",
+                                "period",
+                                "type",
+                                "quantity",
+                                "price",
+                                "name",
+                                "accountId"
+                            ]
+                        }
+                    },
+                    "key": {
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "m1v1imqpr6493"
+                        },
+                        "description": "The key to be passed when viewed publically or via direct URI"
+                    },
+                    "taxArray": {
+                        "type": "object",
+                        "x-stoplight": {
+                            "id": "g3bblqx7yav0e"
+                        },
+                        "properties": {
+                            "<tax group name>": {
+                                "type": "object",
+                                "x-stoplight": {
+                                    "id": "qngovxzp6mbho"
+                                },
+                                "properties": {
+                                    "total": {
+                                        "type": "string",
+                                        "x-stoplight": {
+                                            "id": "z8u5nm5sd3vx8"
+                                        }
+                                    },
+                                    "<rate name>": {
+                                        "type": "string",
+                                        "x-stoplight": {
+                                            "id": "ekpxif4q0lbzl"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "total": {
+                        "type": "object",
+                        "x-stoplight": {
+                            "id": "kgx0znr1coygt"
+                        },
+                        "properties": {
+                            "sub": {
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "86nkhwpsmshve"
+                                }
+                            },
+                            "tax": {
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "u4jt9hal9fnr7"
+                                }
+                            },
+                            "total": {
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "oz3nhhloqns1d"
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "date",
+                    "accountId"
+                ]
+            },
+            "InvoiceItem": {
+                "x-stoplight": {
+                    "id": "77ihglbu137aa"
+                },
+                "title": "InvoiceItem",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "Unique identifier of the invoice item."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Indicates whether the invoice item has been posted or not."
+                    },
+                    "invoiceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the invoice that the item belongs to."
+                    },
+                    "period": {
+                        "type": "object",
+                        "description": "The period associated with the invoice item.",
+                        "required": [
+                            "start"
+                        ],
+                        "properties": {
+                            "start": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The start date of the period associated with the invoice item."
+                            },
+                            "end": {
+                                "type": "string",
+                                "format": "date-time",
+                                "description": "The end date of the period associated with the invoice item."
+                            }
+                        }
+                    },
+                    "type": {
+                        "type": "integer",
+                        "enum": [
+                            1,
+                            2,
+                            3
+                        ],
+                        "description": "The type of the invoice item."
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "description": "The quantity of the invoice item."
+                    },
+                    "price": {
+                        "type": "string",
+                        "description": "The price of the invoice item.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "cost": {
+                        "type": "string",
+                        "description": "The cost of the invoice item.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the invoice item."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the invoice item."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the invoice item."
+                    },
+                    "serviceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the service associated with the invoice item."
+                    },
+                    "agreementId": {
+                        "type": "string",
+                        "description": "The unique identifier of the agreement associated with the invoice item."
+                    },
+                    "taxCategoryId": {
+                        "type": "string",
+                        "description": "The unique identifier of the tax category associated with the invoice item."
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "period",
+                    "type",
+                    "quantity",
+                    "price",
+                    "name",
+                    "accountId"
+                ]
+            },
+            "Payment": {
+                "x-stoplight": {
+                    "id": "jdazm79b7y2k9"
+                },
+                "title": "Payment",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier for the payment.",
+                        "type": "string"
+                    },
+                    "accountId": {
+                        "description": "The unique identifier for the account associated with the payment.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount of the payment.",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "method": {
+                        "description": "The method used to make the payment.",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4
+                        ],
+                        "enumNames": [
+                            "Check",
+                            "Card",
+                            "ACH",
+                            "PayPal",
+                            "Crypto"
+                        ]
+                    },
+                    "reference": {
+                        "description": "A reference number or description for the payment.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the payment.",
+                        "type": "boolean"
+                    },
+                    "date": {
+                        "description": "The date the payment was made.",
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "accountId",
+                    "amount",
+                    "method",
+                    "status",
+                    "date"
+                ]
+            },
+            "Service": {
+                "x-stoplight": {
+                    "id": "dz2q3eaakhcu4"
+                },
+                "title": "Service",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier for the service",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Indicates if the service is active",
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "description": "The name of the service",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the service",
+                        "type": "string"
+                    },
+                    "invoiceDescription": {
+                        "description": "A description of the service to be shown on invoices",
+                        "type": "string"
+                    },
+                    "period": {
+                        "description": "The period in which the service is billed",
+                        "type": "integer",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3,
+                            4,
+                            5
+                        ],
+                        "enumLabels": [
+                            "Day",
+                            "Week",
+                            "Month",
+                            "Quarter",
+                            "Bi-Annually",
+                            "Year"
+                        ]
+                    },
+                    "cost": {
+                        "description": "The cost of the service",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "price": {
+                        "description": "The price of the service",
+                        "type": "string",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    },
+                    "taxCategoryId": {
+                        "description": "The ID of the tax category for the service",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name",
+                    "period",
+                    "price"
+                ]
+            },
+            "Category": {
+                "x-stoplight": {
+                    "id": "tple77d9ncu5a"
+                },
+                "title": "Category",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "0cr6as7ew5nv8"
+                        },
+                        "description": "The unique identifier for the category."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "sg2946d8xklk0"
+                        },
+                        "description": "The status of the category (active or inactive)."
+                    },
+                    "name": {
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "ycqdkd6m670c7"
+                        },
+                        "description": "The name of the category."
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name"
+                ]
+            },
+            "Group": {
+                "x-stoplight": {
+                    "id": "4auu9pfld0rft"
+                },
+                "title": "Group",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The ID of the tax group."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the tax group is active or not."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the tax group."
+                    },
+                    "rates": {
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "description": "The ID of a tax rate associated with the group."
+                        },
+                        "description": "The tax rates associated with the tax group."
+                    }
+                },
+                "required": [
+                    "status",
+                    "name",
+                    "rates"
+                ]
+            },
+            "Rate": {
+                "x-stoplight": {
+                    "id": "vbdksc8gujuq9"
+                },
+                "title": "Rate",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The ID of the rate."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the rate is active or inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the rate."
+                    },
+                    "rate": {
+                        "type": "string",
+                        "description": "The rate as a percentage, represented as a string.",
+                        "pattern": "^-?[0-9]*\\.?[0-9]{0,28}$"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name",
+                    "rate"
+                ]
+            },
+            "Region": {
+                "x-stoplight": {
+                    "id": "gxou03sg61dit"
+                },
+                "title": "Region",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the region."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the region. True for active and false for inactive."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the region."
+                    },
+                    "matrix": {
+                        "type": "array",
+                        "description": "The tax matrix for this region.",
+                        "items": {
+                            "type": "object",
+                            "x-stoplight": {
+                                "id": "dctcwku70mjch"
+                            },
+                            "properties": {
+                                "$categoryId": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "b65ptuitotyt7"
+                                    },
+                                    "description": "GroupId"
+                                }
+                            },
+                            "required": [
+                                "$categoryId"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name",
+                    "matrix"
+                ]
+            }
+        },
+        "parameters": {
+            "include": {
+                "name": "include",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "name,status"
+                },
+                "description": "Comma separated value of the name of fields to include in the search request"
+            }
+        },
+        "securitySchemes": {
+            "mkey": {
+                "name": "mkey",
+                "type": "apiKey",
+                "in": "header",
+                "description": ""
+            }
+        }
+    },
+    "x-internal": false,
+    "tags": [
+        {
+            "name": "agreements"
+        },
+        {
+            "name": "allocations"
+        },
+        {
+            "name": "invoiceitems"
+        },
+        {
+            "name": "invoices"
+        },
+        {
+            "name": "payments"
+        },
+        {
+            "name": "services"
+        },
+        {
+            "name": "tax.categories"
+        },
+        {
+            "name": "tax.groups"
+        },
+        {
+            "name": "tax.rates"
+        },
+        {
+            "name": "tax.regions"
+        }
+    ]
+}

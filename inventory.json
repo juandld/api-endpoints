@@ -1,0 +1,1722 @@
+{
+    "openapi": "3.1.0",
+    "x-stoplight": {
+        "id": "eimyyuxbl65zx"
+    },
+    "info": {
+        "title": "inventory",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "/api",
+            "description": ""
+        }
+    ],
+    "paths": {
+        "/inventory/assets": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "assets"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "s9jekzjfiuwym"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "ko6htgv13aifk"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "q7tr50zzfvuzl"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "eq5tcjnsngp9c"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "q3nyvle5lqhsq"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "nd187n2ng09jv"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "sqm6setkncdjp"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "gwkfdmtvmnjau"
+                                                },
+                                                "type": "array",
+                                                "items": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "parameters": [],
+            "post": {
+                "summary": "Create",
+                "operationId": "post-inventory-assets",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "1elbi1zv77tzo"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Asset",
+                                            "x-stoplight": {
+                                                "id": "4b177zggc37mm"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AssetInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "assets"
+                ]
+            }
+        },
+        "/inventory/assetbundles": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "assetbundles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "zsoaa8hi68i3k"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "dg25jjf6l3typ"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "8k7is1m1cdopz"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "okd9fun6r35ha"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "a7jiqq05jevds"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory-AssetBundles",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "parameters": [],
+            "post": {
+                "summary": "Create",
+                "operationId": "post-inventory-assetbundles",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "b84htmybp5905"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/AssetBundle",
+                                            "x-stoplight": {
+                                                "id": "ga4jp0k5jnwjr"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AssetBundleInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "assetbundles"
+                ]
+            }
+        },
+        "/inventory/products": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "products"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "40x8q85qi8d64"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "ia6nlmk6cywln"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "vi0dcb1xd7ehq"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "hq5omypixb6gj"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "m5oid8acbkkk4"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory-products",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-inventory-products",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "f0lutxxnwkdb7"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Product",
+                                            "x-stoplight": {
+                                                "id": "zmjqf3zdryeaj"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductInput"
+                            }
+                        }
+                    }
+                },
+                "description": "",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "products"
+                ]
+            }
+        },
+        "/inventory/productbundles": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "productbundles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "yzwcc2xnbiceq"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "zmecc4mqg6rxi"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "lbjmsst7ufa97"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "853giemnk68pl"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "wvks5lvfrfizp"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory-productbundles",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-inventory-productbundles",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "u7qajf82w0xaw"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/ProductBundle",
+                                            "x-stoplight": {
+                                                "id": "n4ljrm2rt8d1p"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductBundleInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "productbundles"
+                ]
+            }
+        },
+        "/inventory/asset/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "assets"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "c14coknrrge4f"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Asset",
+                                            "x-stoplight": {
+                                                "id": "0uwsz15o5qhr7"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory-asset-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-inventory-asset-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "gsv2y6djiercc"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Asset",
+                                            "x-stoplight": {
+                                                "id": "bv6w7lfumkieb"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AssetEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "assets"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-inventory-asset-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "ipaztsjvfiatu"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "assets"
+                ]
+            }
+        },
+        "/inventory/assetbundle/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "assetbundles"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "t5xs1rpm7ucqo"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/AssetBundle",
+                                            "x-stoplight": {
+                                                "id": "s0zxoun5ty8cg"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory-assetbundle-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-inventory-assetbundle-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "6wmptk6fvud9k"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/AssetBundle",
+                                            "x-stoplight": {
+                                                "id": "e3pbtbq75ozl5"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AssetBundleEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "assetbundles"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-inventory-assetbundle-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "rzvxum4bqvmd4"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "assetbundles"
+                ]
+            }
+        },
+        "/inventory/product/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "qqvz4hglzswoy"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Product",
+                                            "x-stoplight": {
+                                                "id": "6abwfd351uir9"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory-product-id",
+                "x-internal": false,
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "products"
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-inventory-product-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "hfjb7uk2n1hqo"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Product",
+                                            "x-stoplight": {
+                                                "id": "i2on1h14ofqhb"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "products"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-inventory-product-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "2hsohv7xz0qhw"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "products"
+                ]
+            }
+        },
+        "/inventory/productbundle/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "8r2zqckml2bnn"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/ProductBundle",
+                                            "x-stoplight": {
+                                                "id": "ne7qvye3fi6m9"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-inventory-productbundle-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "productbundles"
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-inventory-productbundle-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "d63b1wy7xtgsy"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/ProductBundle",
+                                            "x-stoplight": {
+                                                "id": "1atkl8mir71sm"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProductBundleEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "productbundles"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-inventory-productbundle-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "2y9mwi0ryg9ro"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "productbundles"
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AssetInput": {
+                "title": "Asset Create Input",
+                "x-stoplight": {
+                    "id": "x2az5p3paw4s0"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Indicates whether the asset is active or not"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the asset"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A brief description of the asset"
+                    },
+                    "serial": {
+                        "type": "string",
+                        "description": "The serial number of the asset"
+                    },
+                    "productId": {
+                        "type": "string",
+                        "description": "The _id of the product associated with the asset"
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The _id of the account associated with the asset"
+                    }
+                },
+                "required": [
+                    "status",
+                    "name",
+                    "description",
+                    "productId"
+                ],
+                "x-tags": [
+                    "assets"
+                ]
+            },
+            "AssetBundleInput": {
+                "title": "AssetBundle Create Input",
+                "x-stoplight": {
+                    "id": "7s5wqnua7z9ug"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the asset bundle (active/inactive)"
+                    },
+                    "productBundleId": {
+                        "type": "string",
+                        "description": "The unique identifier of the product bundle associated with the asset bundle"
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the asset bundle"
+                    },
+                    "assets": {
+                        "type": "array",
+                        "description": "An array of assets grouped by product index",
+                        "items": {
+                            "type": "array",
+                            "description": "An array of asset IDs for a specific product",
+                            "items": {
+                                "type": "string",
+                                "description": "The unique identifier of an asset"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "productBundleId",
+                    "assets"
+                ],
+                "x-tags": [
+                    "assetbundles"
+                ]
+            },
+            "ProductInput": {
+                "title": "Product Create Input",
+                "x-stoplight": {
+                    "id": "z47go9z5sqouv"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the product.",
+                        "x-stoplight": {
+                            "id": "yebupxus42crf"
+                        }
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the product.",
+                        "x-stoplight": {
+                            "id": "ya8llrgr9n6te"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A description of the product.",
+                        "x-stoplight": {
+                            "id": "vwty7fmc7f6c2"
+                        }
+                    },
+                    "serialized": {
+                        "type": "boolean",
+                        "description": "Whether the product is serialized.",
+                        "x-stoplight": {
+                            "id": "hf71u7qhaows1"
+                        }
+                    },
+                    "cost": {
+                        "type": "string",
+                        "description": "The cost of the product.",
+                        "x-stoplight": {
+                            "id": "ono31jnvgx3kb"
+                        }
+                    },
+                    "price": {
+                        "type": "string",
+                        "description": "The price of the product.",
+                        "x-stoplight": {
+                            "id": "4hf0stbqvnj2a"
+                        }
+                    },
+                    "manufacturerAccountId": {
+                        "type": "string",
+                        "description": "The ID of the manufacturer account.",
+                        "x-stoplight": {
+                            "id": "0rw74u19mozw5"
+                        }
+                    },
+                    "manufacturerProductNumber": {
+                        "type": "string",
+                        "description": "The manufacturer's product number for the product.",
+                        "x-stoplight": {
+                            "id": "psbozgzxbdfql"
+                        }
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "The SKU for the product.",
+                        "x-stoplight": {
+                            "id": "lh4e86xm7lfau"
+                        }
+                    },
+                    "vendors": {
+                        "type": "array",
+                        "description": "The list of vendors for the product.",
+                        "x-stoplight": {
+                            "id": "081tgsf60qqnl"
+                        },
+                        "items": {
+                            "type": "object",
+                            "x-stoplight": {
+                                "id": "r96zf6xga0mof"
+                            },
+                            "properties": {
+                                "accountId": {
+                                    "type": "string",
+                                    "description": "The ID of the vendor account.",
+                                    "x-stoplight": {
+                                        "id": "657pcagvtm2r7"
+                                    }
+                                },
+                                "vendorProductNumber": {
+                                    "type": "string",
+                                    "description": "The vendor's product number for the product.",
+                                    "x-stoplight": {
+                                        "id": "n6olhjt2ghgxl"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "name",
+                    "description",
+                    "serialized",
+                    "cost",
+                    "price",
+                    "manufacturerAccountId",
+                    "manufacturerProductNumber",
+                    "sku",
+                    "vendors"
+                ],
+                "x-tags": [
+                    "products"
+                ]
+            },
+            "ProductBundleInput": {
+                "title": "ProductBundle Create Input",
+                "x-stoplight": {
+                    "id": "onbknidq9lc8n"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the product bundle.",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "name": {
+                        "description": "The name of the product bundle.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "description": {
+                        "description": "The description of the product bundle.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "products": {
+                        "description": "The list of product IDs included in the bundle.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "name",
+                    "description",
+                    "products"
+                ],
+                "x-tags": [
+                    "productbundles"
+                ]
+            },
+            "AssetEditInput": {
+                "title": "Asset Edit Input",
+                "x-stoplight": {
+                    "id": "0fbdi54d8lp6t"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Indicates whether the asset is active or not"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the asset"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A brief description of the asset"
+                    },
+                    "serial": {
+                        "type": "string",
+                        "description": "The serial number of the asset"
+                    },
+                    "productId": {
+                        "type": "string",
+                        "description": "The _id of the product associated with the asset"
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The _id of the account associated with the asset"
+                    }
+                },
+                "x-tags": [
+                    "assets"
+                ]
+            },
+            "AssetBundleEditInput": {
+                "title": "AssetBundle Edit Input",
+                "x-stoplight": {
+                    "id": "jrgblvsodvdwm"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the asset bundle (active/inactive)"
+                    },
+                    "productBundleId": {
+                        "type": "string",
+                        "description": "The unique identifier of the product bundle associated with the asset bundle"
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the asset bundle"
+                    },
+                    "assets": {
+                        "type": "array",
+                        "description": "An array of assets grouped by product index",
+                        "items": {
+                            "type": "array",
+                            "description": "An array of asset IDs for a specific product",
+                            "items": {
+                                "type": "string",
+                                "description": "The unique identifier of an asset"
+                            }
+                        }
+                    }
+                },
+                "x-tags": [
+                    "assetbundles"
+                ]
+            },
+            "ProductEditInput": {
+                "title": "Product Edit Input",
+                "x-stoplight": {
+                    "id": "jk5xabz9qlpv5"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the product.",
+                        "x-stoplight": {
+                            "id": "yebupxus42crf"
+                        }
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the product.",
+                        "x-stoplight": {
+                            "id": "ya8llrgr9n6te"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A description of the product.",
+                        "x-stoplight": {
+                            "id": "vwty7fmc7f6c2"
+                        }
+                    },
+                    "serialized": {
+                        "type": "boolean",
+                        "description": "Whether the product is serialized.",
+                        "x-stoplight": {
+                            "id": "hf71u7qhaows1"
+                        }
+                    },
+                    "cost": {
+                        "type": "string",
+                        "description": "The cost of the product.",
+                        "x-stoplight": {
+                            "id": "ono31jnvgx3kb"
+                        }
+                    },
+                    "price": {
+                        "type": "string",
+                        "description": "The price of the product.",
+                        "x-stoplight": {
+                            "id": "4hf0stbqvnj2a"
+                        }
+                    },
+                    "manufacturerAccountId": {
+                        "type": "string",
+                        "description": "The ID of the manufacturer account.",
+                        "x-stoplight": {
+                            "id": "0rw74u19mozw5"
+                        }
+                    },
+                    "manufacturerProductNumber": {
+                        "type": "string",
+                        "description": "The manufacturer's product number for the product.",
+                        "x-stoplight": {
+                            "id": "psbozgzxbdfql"
+                        }
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "The SKU for the product.",
+                        "x-stoplight": {
+                            "id": "lh4e86xm7lfau"
+                        }
+                    },
+                    "vendors": {
+                        "type": "array",
+                        "description": "The list of vendors for the product.",
+                        "x-stoplight": {
+                            "id": "081tgsf60qqnl"
+                        },
+                        "items": {
+                            "type": "object",
+                            "x-stoplight": {
+                                "id": "r96zf6xga0mof"
+                            },
+                            "properties": {
+                                "accountId": {
+                                    "type": "string",
+                                    "description": "The ID of the vendor account.",
+                                    "x-stoplight": {
+                                        "id": "657pcagvtm2r7"
+                                    }
+                                },
+                                "vendorProductNumber": {
+                                    "type": "string",
+                                    "description": "The vendor's product number for the product.",
+                                    "x-stoplight": {
+                                        "id": "n6olhjt2ghgxl"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-tags": [
+                    "products"
+                ]
+            },
+            "ProductBundleEditInput": {
+                "title": "ProductBundle Edit Input",
+                "x-stoplight": {
+                    "id": "qhxts8m3sgrnn"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the product bundle.",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "name": {
+                        "description": "The name of the product bundle.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "description": {
+                        "description": "The description of the product bundle.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "products": {
+                        "description": "The list of product IDs included in the bundle.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "x-tags": [
+                    "productbundles"
+                ]
+            },
+            "Asset": {
+                "x-stoplight": {
+                    "id": "4b177zggc37mm"
+                },
+                "title": "Asset",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the asset"
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Indicates whether the asset is active or not"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the asset"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A brief description of the asset"
+                    },
+                    "serial": {
+                        "type": "string",
+                        "description": "The serial number of the asset"
+                    },
+                    "productId": {
+                        "type": "string",
+                        "description": "The _id of the product associated with the asset"
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The _id of the account associated with the asset"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name",
+                    "description",
+                    "productId"
+                ]
+            },
+            "AssetBundle": {
+                "x-stoplight": {
+                    "id": "ga4jp0k5jnwjr"
+                },
+                "title": "AssetBundle",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier of the asset bundle"
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the asset bundle (active/inactive)"
+                    },
+                    "productBundleId": {
+                        "type": "string",
+                        "description": "The unique identifier of the product bundle associated with the asset bundle"
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the asset bundle"
+                    },
+                    "assets": {
+                        "type": "array",
+                        "description": "An array of assets grouped by product index",
+                        "items": {
+                            "type": "array",
+                            "description": "An array of asset IDs for a specific product",
+                            "items": {
+                                "type": "string",
+                                "description": "The unique identifier of an asset"
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "productBundleId",
+                    "assets"
+                ]
+            },
+            "Product": {
+                "x-stoplight": {
+                    "id": "zmjqf3zdryeaj"
+                },
+                "title": "Inventory/Product",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "Unique identifier for the product.",
+                        "x-stoplight": {
+                            "id": "q5510eakvbyl7"
+                        }
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the product.",
+                        "x-stoplight": {
+                            "id": "yebupxus42crf"
+                        }
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the product.",
+                        "x-stoplight": {
+                            "id": "ya8llrgr9n6te"
+                        }
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A description of the product.",
+                        "x-stoplight": {
+                            "id": "vwty7fmc7f6c2"
+                        }
+                    },
+                    "serialized": {
+                        "type": "boolean",
+                        "description": "Whether the product is serialized.",
+                        "x-stoplight": {
+                            "id": "hf71u7qhaows1"
+                        }
+                    },
+                    "cost": {
+                        "type": "string",
+                        "description": "The cost of the product.",
+                        "x-stoplight": {
+                            "id": "ono31jnvgx3kb"
+                        }
+                    },
+                    "price": {
+                        "type": "string",
+                        "description": "The price of the product.",
+                        "x-stoplight": {
+                            "id": "4hf0stbqvnj2a"
+                        }
+                    },
+                    "manufacturerAccountId": {
+                        "type": "string",
+                        "description": "The ID of the manufacturer account.",
+                        "x-stoplight": {
+                            "id": "0rw74u19mozw5"
+                        }
+                    },
+                    "manufacturerProductNumber": {
+                        "type": "string",
+                        "description": "The manufacturer's product number for the product.",
+                        "x-stoplight": {
+                            "id": "psbozgzxbdfql"
+                        }
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "The SKU for the product.",
+                        "x-stoplight": {
+                            "id": "lh4e86xm7lfau"
+                        }
+                    },
+                    "vendors": {
+                        "type": "array",
+                        "description": "The list of vendors for the product.",
+                        "x-stoplight": {
+                            "id": "081tgsf60qqnl"
+                        },
+                        "items": {
+                            "type": "object",
+                            "x-stoplight": {
+                                "id": "r96zf6xga0mof"
+                            },
+                            "properties": {
+                                "accountId": {
+                                    "type": "string",
+                                    "description": "The ID of the vendor account.",
+                                    "x-stoplight": {
+                                        "id": "657pcagvtm2r7"
+                                    }
+                                },
+                                "vendorProductNumber": {
+                                    "type": "string",
+                                    "description": "The vendor's product number for the product.",
+                                    "x-stoplight": {
+                                        "id": "n6olhjt2ghgxl"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "accountId",
+                                "vendorProductNumber"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name",
+                    "description",
+                    "serialized",
+                    "cost",
+                    "price",
+                    "manufacturerAccountId",
+                    "manufacturerProductNumber",
+                    "sku"
+                ]
+            },
+            "ProductBundle": {
+                "x-stoplight": {
+                    "id": "n4ljrm2rt8d1p"
+                },
+                "title": "ProductBundle",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The ID of the product bundle.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the product bundle.",
+                        "type": "boolean",
+                        "default": false
+                    },
+                    "name": {
+                        "description": "The name of the product bundle.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "description": {
+                        "description": "The description of the product bundle.",
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "products": {
+                        "description": "The list of product IDs included in the bundle.",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "name",
+                    "description",
+                    "products"
+                ]
+            }
+        },
+        "securitySchemes": {
+            "mkey": {
+                "name": "mkey",
+                "type": "apiKey",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "assetbundles"
+        },
+        {
+            "name": "assets"
+        },
+        {
+            "name": "productbundles"
+        },
+        {
+            "name": "products"
+        }
+    ]
+}

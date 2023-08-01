@@ -1,0 +1,2434 @@
+{
+    "openapi": "3.1.0",
+    "x-stoplight": {
+        "id": "lrp8h58w6rctc"
+    },
+    "info": {
+        "title": "service",
+        "version": "1.0",
+        "summary": "Official Manage API",
+        "contact": {
+            "name": "Manage Team",
+            "email": "api@manage.izt.app"
+        },
+        "description": ""
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/service/tickets": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-service-tickets",
+                "description": "Service tickets",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "tickets"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "w6eyqyud1mkcj"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Ticket",
+                                            "x-stoplight": {
+                                                "id": "w725ruvrnp4we"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-service-tickets",
+                "description": "Create a ticket",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TicketInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tickets"
+                ]
+            },
+            "parameters": []
+        },
+        "/service/boards": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-service-boards",
+                "description": "Service boards",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "boards"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "08o41e16om8u4"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Board",
+                                            "x-stoplight": {
+                                                "id": "obadacu5onjlc"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-service-boards",
+                "description": "Create a board",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BoardInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "boards"
+                ]
+            },
+            "parameters": []
+        },
+        "/service/timesheets": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "timesheets"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "sseqstwiy4lvw"
+                                            }
+                                        },
+                                        "data": {
+                                            "x-stoplight": {
+                                                "id": "65kvuvog2pkby"
+                                            },
+                                            "type": "array",
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "1g6n6h36gxck7"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "084q49vciuj4n"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "18vh7vfqxc5ng"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-service-timesheets",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-service-timesheets",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "jr8iegj955twb"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Timesheet",
+                                            "x-stoplight": {
+                                                "id": "sdojehibqpz1x"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TimesheetInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "timesheets"
+                ]
+            }
+        },
+        "/service/projects/projects": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "projects.project"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "sseqstwiy4lvw"
+                                            }
+                                        },
+                                        "data": {
+                                            "x-stoplight": {
+                                                "id": "65kvuvog2pkby"
+                                            },
+                                            "type": "array",
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "1g6n6h36gxck7"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "084q49vciuj4n"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "18vh7vfqxc5ng"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-service-projects-projects",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-service-projects-projects",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "ljmuj8s50e54z"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Project",
+                                            "x-stoplight": {
+                                                "id": "snqd0d7w6br84"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjectInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "projects.project"
+                ]
+            }
+        },
+        "/service/projects/templates": {
+            "get": {
+                "summary": "Search",
+                "tags": [
+                    "projects.template"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "sseqstwiy4lvw"
+                                            }
+                                        },
+                                        "data": {
+                                            "x-stoplight": {
+                                                "id": "65kvuvog2pkby"
+                                            },
+                                            "type": "array",
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "1g6n6h36gxck7"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "084q49vciuj4n"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "18vh7vfqxc5ng"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-service-projects-templates",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "operationId": "post-service-projects-templates",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "0ey3lhru7ano0"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Template",
+                                            "x-stoplight": {
+                                                "id": "32pjab1741n8t"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TemplateInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "projects.template"
+                ]
+            }
+        },
+        "/service/ticket/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Ticket",
+                                            "x-stoplight": {
+                                                "id": "h8l4t89mvhgkt"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getservice-ticket-id",
+                "description": "Service accounts",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "tickets"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchservice-ticket-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "27nk5gebbif08"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Ticket",
+                                            "x-stoplight": {
+                                                "id": "lcvwvft9xi9t6"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TicketEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "tickets"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deleteservice-ticket-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "yxmwmfpuxkktl"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "tags": [
+                    "tickets"
+                ]
+            }
+        },
+        "/service/board/{id}": {
+            "get": {
+                "summary": "",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Board"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getservice-board-id",
+                "description": "Service boards",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "boards"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "",
+                "operationId": "patchservice-board-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "clngs0abncc1i"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Board",
+                                            "x-stoplight": {
+                                                "id": "anvj2gzyfa7st"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/BoardEditInput"
+                            }
+                        }
+                    }
+                },
+                "description": "edit board",
+                "tags": [
+                    "boards"
+                ]
+            },
+            "delete": {
+                "summary": "",
+                "operationId": "deleteservice-board-id",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "boolean",
+                                        "x-stoplight": {
+                                            "id": "88yj7k1z4z9ze"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "delete board",
+                "tags": [
+                    "boards"
+                ]
+            }
+        },
+        "/service/timesheet/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "timesheets"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "qv623ufzf4292"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Timesheet",
+                                            "x-stoplight": {
+                                                "id": "0r1odloh22100"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-service-timesheet-id",
+                "requestBody": {
+                    "content": {}
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ]
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-service-timesheet-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "trhynlf0t9zq8"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Timesheet",
+                                            "x-stoplight": {
+                                                "id": "s5t2d4ukb2wst"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TimesheetEditInput"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "timesheets"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-service-timesheet-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "i2ber2c32nqgi"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "timesheets"
+                ]
+            }
+        },
+        "/service/projects/project/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "projects.project"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "b7edrjtwfz89g"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Project",
+                                            "x-stoplight": {
+                                                "id": "gy0b9ujp2tcod"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-service-projects-project-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                }
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-service-projects-project-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "k7w9qe6mxlz9w"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Project",
+                                            "x-stoplight": {
+                                                "id": "1gav9cno6qe6g"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ProjectEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "projects.project"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-service-projects-project-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "m2uw03ws9fq3o"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "projects.project"
+                ]
+            }
+        },
+        "/services/projects/template/{id}": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "get": {
+                "summary": "View",
+                "tags": [
+                    "projects.template"
+                ],
+                "responses": {},
+                "operationId": "get-services-projects-template-id",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "type": "boolean",
+                                        "x-stoplight": {
+                                            "id": "07rgz0a3lpq4n"
+                                        }
+                                    },
+                                    "data": {
+                                        "$ref": "#/components/schemas/Template",
+                                        "x-stoplight": {
+                                            "id": "v5vj8ifoka0eq"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patch-services-projects-template-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "k614s4hplcr7r"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Template",
+                                            "x-stoplight": {
+                                                "id": "v2lgqm2eyxvb6"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TemplateEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "projects.template"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "delete-services-projects-template-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "w4s3f7ndywv3y"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "tags": [
+                    "projects.template"
+                ]
+            }
+        },
+        "/service/projects/template/{id}/deploy": {
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "post": {
+                "summary": "Deploy",
+                "operationId": "post-service-projects-template-id-deploy",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "hg9btygtg8kxj"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Project",
+                                            "x-stoplight": {
+                                                "id": "jkeba81ka2ktw"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "projects.template"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TemplateDeployInput"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "TicketInput": {
+                "title": "Ticket Create Input",
+                "x-stoplight": {
+                    "id": "xlom9ah4q84zq"
+                },
+                "type": "object",
+                "x-tags": [
+                    "tickets"
+                ],
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the ticket."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the ticket: true for closed and false for open."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the ticket."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the ticket."
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the ticket was created."
+                    },
+                    "dueDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the ticket is due."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The unique identifier of the primary contact associated with the ticket."
+                    },
+                    "primaryResourceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the primary resource associated with the ticket."
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "The attachments associated with the ticket.",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "cz9y2pl7168m4"
+                            },
+                            "type": "string"
+                        }
+                    },
+                    "boardId": {
+                        "type": "string",
+                        "description": "The unique identifier of the board associated with the ticket."
+                    },
+                    "labelIds": {
+                        "type": "array",
+                        "description": "The labels associated with the ticket.",
+                        "items": {
+                            "type": "string",
+                            "x-stoplight": {
+                                "id": "fv37wuakosxvd"
+                            }
+                        }
+                    },
+                    "locationId": {
+                        "type": "string",
+                        "description": "The unique identifier of the location associated with the ticket."
+                    },
+                    "slaId": {
+                        "type": "string",
+                        "description": "The unique identifier of the service level agreement (SLA) associated with the ticket."
+                    },
+                    "secondaryResourceIds": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "u89mez91u95u9"
+                        },
+                        "description": "The unique identifier of the secondary resources associated with the ticket.",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "5uujmfw1jc32o"
+                            },
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "status",
+                    "title",
+                    "description",
+                    "createDate",
+                    "primaryContactId",
+                    "primaryResourceId"
+                ]
+            },
+            "TimesheetInput": {
+                "title": "Timesheet Create Input",
+                "x-stoplight": {
+                    "id": "0biks6m0niwuf"
+                },
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "string",
+                        "description": "The unique identifier for the user associated with the timesheet."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the timesheet. True for active, false for inactive."
+                    },
+                    "period": {
+                        "type": "integer",
+                        "description": "The time period of the timesheet. Valid values: 0 for daily, 1 for weekly, 2 for bi-weekly, 3 for monthly.",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3
+                        ],
+                        "enumNames": [
+                            "Daily",
+                            "Weekly",
+                            "Bi-Weekly",
+                            "Monthly"
+                        ]
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The start date of the timesheet period."
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The end date of the timesheet period."
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the timesheet was created."
+                    }
+                },
+                "required": [
+                    "userId",
+                    "status",
+                    "period",
+                    "startDate",
+                    "endDate",
+                    "createDate"
+                ],
+                "x-tags": [
+                    "timesheets"
+                ]
+            },
+            "BoardInput": {
+                "title": "Board Create Input",
+                "x-stoplight": {
+                    "id": "81vdsln39l3jk"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the board (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the board.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "name"
+                ],
+                "x-tags": [
+                    "boards"
+                ]
+            },
+            "TicketEditInput": {
+                "title": "Ticket Edit Input",
+                "x-stoplight": {
+                    "id": "phaogezd2fni7"
+                },
+                "type": "object",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the ticket."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the ticket: true for closed and false for open."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the ticket."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the ticket."
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the ticket was created."
+                    },
+                    "dueDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the ticket is due."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The unique identifier of the primary contact associated with the ticket."
+                    },
+                    "primaryResourceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the primary resource associated with the ticket."
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "The attachments associated with the ticket.",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "cz9y2pl7168m4"
+                            },
+                            "type": "string"
+                        }
+                    },
+                    "boardId": {
+                        "type": "string",
+                        "description": "The unique identifier of the board associated with the ticket."
+                    },
+                    "labelIds": {
+                        "type": "array",
+                        "description": "The labels associated with the ticket.",
+                        "items": {
+                            "type": "string",
+                            "x-stoplight": {
+                                "id": "jwyfck1swi6jf"
+                            }
+                        }
+                    },
+                    "locationId": {
+                        "type": "string",
+                        "description": "The unique identifier of the location associated with the ticket."
+                    },
+                    "slaId": {
+                        "type": "string",
+                        "description": "The unique identifier of the service level agreement (SLA) associated with the ticket."
+                    },
+                    "secondaryResourceIds": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "wnpl7mis15y5j"
+                        },
+                        "description": "The unique identifier of the secondary resources associated with the ticket.",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "ha8aut2d07h1x"
+                            },
+                            "type": "string"
+                        }
+                    }
+                },
+                "x-tags": [
+                    "tickets"
+                ]
+            },
+            "BoardEditInput": {
+                "title": "Board Edit Input",
+                "x-stoplight": {
+                    "id": "pqvej5uuwlvft"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the board (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the board.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    }
+                },
+                "x-tags": [
+                    "boards"
+                ]
+            },
+            "TimesheetEditInput": {
+                "title": "Timesheet Edit Input",
+                "x-stoplight": {
+                    "id": "dh6x4iy0rtquj"
+                },
+                "type": "object",
+                "properties": {
+                    "userId": {
+                        "type": "string",
+                        "description": "The unique identifier for the user associated with the timesheet."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the timesheet. True for active, false for inactive."
+                    },
+                    "period": {
+                        "type": "integer",
+                        "description": "The time period of the timesheet. Valid values: 0 for daily, 1 for weekly, 2 for bi-weekly, 3 for monthly.",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3
+                        ],
+                        "enumNames": [
+                            "Daily",
+                            "Weekly",
+                            "Bi-Weekly",
+                            "Monthly"
+                        ]
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The start date of the timesheet period."
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The end date of the timesheet period."
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the timesheet was created."
+                    }
+                },
+                "x-tags": [
+                    "timesheets"
+                ]
+            },
+            "ProjectInput": {
+                "title": "ProjectInput",
+                "x-stoplight": {
+                    "id": "4j74xe32gxhb9"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the project (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "description": {
+                        "description": "The description of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "createDate": {
+                        "description": "The creation date of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "format": "date-time"
+                    },
+                    "ticketIds": {
+                        "description": "The array of ticket Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "contactIds": {
+                        "description": "The array of contact Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "attachmentIds": {
+                        "description": "The array of attachment Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "taskIds": {
+                        "description": "The array of task Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    }
+                },
+                "required": [
+                    "status",
+                    "name"
+                ]
+            },
+            "ProjectEditInput": {
+                "title": "ProjectEditInput",
+                "x-stoplight": {
+                    "id": "22dxfoah284jk"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the project (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "description": {
+                        "description": "The description of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "createDate": {
+                        "description": "The creation date of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "format": "date-time"
+                    },
+                    "ticketIds": {
+                        "description": "The array of ticket Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "contactIds": {
+                        "description": "The array of contact Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "attachmentIds": {
+                        "description": "The array of attachment Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "taskIds": {
+                        "description": "The array of task Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    }
+                }
+            },
+            "TemplateInput": {
+                "title": "TemplateInput",
+                "x-stoplight": {
+                    "id": "6cgqa0lb2yg6n"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the template (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "description": {
+                        "description": "The description of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "createDate": {
+                        "description": "The creation date of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "format": "date-time"
+                    },
+                    "ticketTemplates": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "2al5uuzp80xmo"
+                        },
+                        "description": "Ticket Template strings (parsed using volt engine)",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "rreg5v3hdzwmp"
+                            },
+                            "type": "object",
+                            "title": "ticketContent",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "0mtgdtnhihusz"
+                                    }
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "ezmj3o3732b3g"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "title",
+                                "description"
+                            ]
+                        }
+                    },
+                    "taskTemplates": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "95i50gu28ystc"
+                        },
+                        "description": "Task Template strings (parsed using volt engine)",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "asfzks9na9yt9"
+                            },
+                            "type": "object",
+                            "title": "taskContent",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "bfsml3c767kcg"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "title"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "status",
+                    "name",
+                    "description"
+                ]
+            },
+            "TemplateEditInput": {
+                "title": "TemplateEditInput",
+                "x-stoplight": {
+                    "id": "nuexahbde7xtp"
+                },
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "description": "The status of the template (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "description": {
+                        "description": "The description of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "createDate": {
+                        "description": "The creation date of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "format": "date-time"
+                    },
+                    "ticketTemplates": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "2al5uuzp80xmo"
+                        },
+                        "description": "Ticket Template strings (parsed using volt engine)",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "rreg5v3hdzwmp"
+                            },
+                            "type": "object",
+                            "title": "ticketContent",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "0mtgdtnhihusz"
+                                    }
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "ezmj3o3732b3g"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "title",
+                                "description"
+                            ]
+                        }
+                    },
+                    "taskTemplates": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "95i50gu28ystc"
+                        },
+                        "description": "Task Template strings (parsed using volt engine)",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "asfzks9na9yt9"
+                            },
+                            "type": "object",
+                            "title": "taskContent",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "bfsml3c767kcg"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "title"
+                            ]
+                        }
+                    }
+                }
+            },
+            "TemplateDeployInput": {
+                "title": "TemplateDeployInput",
+                "x-stoplight": {
+                    "id": "u0o80joqsinak"
+                },
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Board": {
+                "title": "Board",
+                "x-stoplight": {
+                    "id": "u4ss8r534z21e"
+                },
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier of the board.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "3baz8csm3xmp2"
+                        }
+                    },
+                    "status": {
+                        "description": "The status of the board (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the board.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name"
+                ]
+            },
+            "Project": {
+                "x-stoplight": {
+                    "id": "snqd0d7w6br84"
+                },
+                "title": "Project",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier of the project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "3baz8csm3xmp2"
+                        }
+                    },
+                    "status": {
+                        "description": "The status of the project (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "description": {
+                        "description": "The description of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "createDate": {
+                        "description": "The creation date of the Project.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "format": "date-time"
+                    },
+                    "ticketIds": {
+                        "description": "The array of ticket Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "contactIds": {
+                        "description": "The array of contact Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "attachmentIds": {
+                        "description": "The array of attachment Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    },
+                    "taskIds": {
+                        "description": "The array of task Ids acossiated with the project.",
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "items": {}
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name"
+                ]
+            },
+            "Template": {
+                "x-stoplight": {
+                    "id": "v5vj8ifoka0eq"
+                },
+                "title": "Template",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "description": "The unique identifier of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "3baz8csm3xmp2"
+                        }
+                    },
+                    "status": {
+                        "description": "The status of the template (active or inactive).",
+                        "type": "boolean",
+                        "x-stoplight": {
+                            "id": "7vuz0td40is8o"
+                        }
+                    },
+                    "name": {
+                        "description": "The name of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "description": {
+                        "description": "The description of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        }
+                    },
+                    "createDate": {
+                        "description": "The creation date of the template.",
+                        "type": "string",
+                        "x-stoplight": {
+                            "id": "69qxhv5d39cdj"
+                        },
+                        "format": "date-time"
+                    },
+                    "ticketTemplates": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "2al5uuzp80xmo"
+                        },
+                        "description": "Ticket Template strings (parsed using volt engine)",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "rreg5v3hdzwmp"
+                            },
+                            "type": "object",
+                            "title": "ticketContent",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "0mtgdtnhihusz"
+                                    }
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "ezmj3o3732b3g"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "title",
+                                "description"
+                            ]
+                        }
+                    },
+                    "taskTemplates": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "95i50gu28ystc"
+                        },
+                        "description": "Task Template strings (parsed using volt engine)",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "asfzks9na9yt9"
+                            },
+                            "type": "object",
+                            "title": "taskContent",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "x-stoplight": {
+                                        "id": "bfsml3c767kcg"
+                                    }
+                                }
+                            },
+                            "required": [
+                                "title"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "name"
+                ]
+            },
+            "Ticket": {
+                "x-stoplight": {
+                    "id": "w725ruvrnp4we"
+                },
+                "title": "Ticket",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the ticket."
+                    },
+                    "accountId": {
+                        "type": "string",
+                        "description": "The unique identifier of the account associated with the ticket."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the ticket: true for closed and false for open."
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the ticket."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The description of the ticket."
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the ticket was created."
+                    },
+                    "dueDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "The date and time when the ticket is due."
+                    },
+                    "primaryContactId": {
+                        "type": "string",
+                        "description": "The unique identifier of the primary contact associated with the ticket."
+                    },
+                    "primaryResourceId": {
+                        "type": "string",
+                        "description": "The unique identifier of the primary resource associated with the ticket."
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "The attachments associated with the ticket.",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "cz9y2pl7168m4"
+                            },
+                            "type": "string"
+                        }
+                    },
+                    "boardId": {
+                        "type": "string",
+                        "description": "The unique identifier of the board associated with the ticket."
+                    },
+                    "labelIds": {
+                        "type": "array",
+                        "description": "The labels associated with the ticket.",
+                        "items": {
+                            "type": "string",
+                            "x-stoplight": {
+                                "id": "jwvbslyqdblv1"
+                            }
+                        }
+                    },
+                    "locationId": {
+                        "type": "string",
+                        "description": "The unique identifier of the location associated with the ticket."
+                    },
+                    "slaId": {
+                        "type": "string",
+                        "description": "The unique identifier of the service level agreement (SLA) associated with the ticket."
+                    },
+                    "secondaryResourceIds": {
+                        "type": "array",
+                        "x-stoplight": {
+                            "id": "93x3mvm0bg225"
+                        },
+                        "description": "The unique identifier of the secondary resources associated with the ticket.",
+                        "items": {
+                            "x-stoplight": {
+                                "id": "1gqaanz9y9h3w"
+                            },
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "accountId",
+                    "status",
+                    "title",
+                    "description",
+                    "createDate",
+                    "primaryContactId",
+                    "primaryResourceId"
+                ]
+            },
+            "Timesheet": {
+                "x-stoplight": {
+                    "id": "sdojehibqpz1x"
+                },
+                "title": "Timesheet",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the timesheet."
+                    },
+                    "userId": {
+                        "type": "string",
+                        "description": "The unique identifier for the user associated with the timesheet."
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "The status of the timesheet. True for active, false for inactive."
+                    },
+                    "period": {
+                        "type": "integer",
+                        "description": "The time period of the timesheet. Valid values: 0 for daily, 1 for weekly, 2 for bi-weekly, 3 for monthly.",
+                        "enum": [
+                            0,
+                            1,
+                            2,
+                            3
+                        ],
+                        "enumNames": [
+                            "Daily",
+                            "Weekly",
+                            "Bi-Weekly",
+                            "Monthly"
+                        ]
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The start date of the timesheet period."
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The end date of the timesheet period."
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The date the timesheet was created."
+                    }
+                },
+                "required": [
+                    "_id",
+                    "userId",
+                    "status",
+                    "period",
+                    "startDate",
+                    "endDate",
+                    "createDate"
+                ]
+            }
+        },
+        "parameters": {
+            "include": {
+                "name": "include",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "name,status"
+                },
+                "description": "Comma separated value of the name of fields to include in the search request"
+            }
+        },
+        "securitySchemes": {
+            "mkey": {
+                "name": "mkey",
+                "type": "apiKey",
+                "in": "header",
+                "description": ""
+            }
+        }
+    },
+    "x-internal": false,
+    "tags": [
+        {
+            "name": "boards"
+        },
+        {
+            "name": "projects.project"
+        },
+        {
+            "name": "projects.template"
+        },
+        {
+            "name": "tickets"
+        },
+        {
+            "name": "timesheets"
+        }
+    ]
+}

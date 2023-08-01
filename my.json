@@ -1,0 +1,441 @@
+{
+    "openapi": "3.1.0",
+    "x-stoplight": {
+        "id": "tqyy1jg5je4i5"
+    },
+    "info": {
+        "title": "My",
+        "version": "1.0",
+        "contact": {
+            "name": "Manage Team",
+            "email": "api@manage.izt.app"
+        },
+        "description": ""
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/my/notifications/fields": {
+            "get": {
+                "summary": "Fields",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "name": "status",
+                                                    "label": "Status",
+                                                    "type": "dropdown",
+                                                    "data": {
+                                                        "0": {
+                                                            "label": "Inactive",
+                                                            "badge": "warning"
+                                                        },
+                                                        "1": {
+                                                            "label": "Active",
+                                                            "badge": "success"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "title",
+                                                    "label": "Title",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "text",
+                                                    "label": "Text",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "color",
+                                                    "label": "Color",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "icon",
+                                                    "label": "Icon",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "createDate",
+                                                    "label": "Created",
+                                                    "type": "date"
+                                                },
+                                                {
+                                                    "name": "priority",
+                                                    "label": "Priority",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "resourceId",
+                                                    "label": "Resource",
+                                                    "type": "id"
+                                                },
+                                                {
+                                                    "name": "url",
+                                                    "label": "URL",
+                                                    "type": "text"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "default": true
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "status"
+                                                    },
+                                                    "label": {
+                                                        "type": "string",
+                                                        "example": "Status"
+                                                    },
+                                                    "type": {
+                                                        "$ref": "#/components/schemas/Field-Type"
+                                                    },
+                                                    "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "": {
+                                                                "type": "object",
+                                                                "x-stoplight": {
+                                                                    "id": "grzqkf10vh263"
+                                                                },
+                                                                "properties": {
+                                                                    "label": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "badge": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "required": [
+                                                    "name",
+                                                    "label",
+                                                    "type"
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "status",
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "name": "status",
+                                                    "label": "Status",
+                                                    "type": "dropdown",
+                                                    "data": {
+                                                        "0": {
+                                                            "label": "Inactive",
+                                                            "badge": "warning"
+                                                        },
+                                                        "1": {
+                                                            "label": "Active",
+                                                            "badge": "success"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "name": "title",
+                                                    "label": "Title",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "text",
+                                                    "label": "Text",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "color",
+                                                    "label": "Color",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "icon",
+                                                    "label": "Icon",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "createDate",
+                                                    "label": "Created",
+                                                    "type": "date"
+                                                },
+                                                {
+                                                    "name": "priority",
+                                                    "label": "Priority",
+                                                    "type": "text"
+                                                },
+                                                {
+                                                    "name": "resourceId",
+                                                    "label": "Resource",
+                                                    "type": "id"
+                                                },
+                                                {
+                                                    "name": "url",
+                                                    "label": "URL",
+                                                    "type": "text"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string",
+                                                        "example": "status"
+                                                    },
+                                                    "label": {
+                                                        "type": "string",
+                                                        "example": "Status"
+                                                    },
+                                                    "type": {
+                                                        "type": "string",
+                                                        "enum": [
+                                                            "text",
+                                                            "dropdown",
+                                                            "id",
+                                                            "date"
+                                                        ]
+                                                    },
+                                                    "data": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "0": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "label": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "badge": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "1": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "label": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "badge": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-my-notifications-fields",
+                "description": "Get fields for the notification object",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "notifications"
+                ]
+            },
+            "parameters": []
+        },
+        "/my/notification/{id}": {
+            "get": {
+                "summary": "Get Notifications",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {},
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "6365e08e26168066bd677a75"
+                                                }
+                                            ],
+                                            "count": 1
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "default": true
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "example": "6365e08e26168066bd677a75"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "example": 1
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-my-notifications",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [
+                    {
+                        "$ref": "#/components/parameters/include"
+                    }
+                ],
+                "tags": [
+                    "notifications"
+                ]
+            },
+            "patch": {
+                "summary": "Update",
+                "operationId": "patch-my-notifications",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "": {
+                        "description": ""
+                    }
+                },
+                "tags": [
+                    "notifications"
+                ],
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "x-stoplight": {
+                                            "id": "ojfngelk6hcgo"
+                                        },
+                                        "example": "value"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "description": "Takes fields to update and returns the modified object"
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "Field-Type": {
+                "__ERROR__": "Error: Error getting file \"/apis/models/Field-Type.json\". \n'/apis/models/Field-Type.json' not found."
+            }
+        },
+        "parameters": {
+            "include": {
+                "name": "include",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "name,status"
+                },
+                "description": "Comma separated value of the name of fields to include in the search request"
+            }
+        },
+        "securitySchemes": {
+            "mkey": {
+                "name": "mkey",
+                "type": "apiKey",
+                "in": "header",
+                "description": ""
+            }
+        }
+    },
+    "x-internal": false,
+    "tags": [
+        {
+            "name": "notifications"
+        }
+    ]
+}

@@ -1,0 +1,1159 @@
+{
+    "openapi": "3.1.0",
+    "x-stoplight": {
+        "id": "nku1vqi66bro4"
+    },
+    "info": {
+        "title": "docs",
+        "version": "1.0",
+        "summary": "Official Manage API",
+        "contact": {
+            "name": "Manage Team",
+            "email": "api@manage.izt.app"
+        },
+        "description": ""
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/docs/articles": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "": {
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "4d7h1qxt9frf5"
+                                            }
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "x-stoplight": {
+                                                "id": "3dx94l4in1g0z"
+                                            },
+                                            "items": {
+                                                "x-stoplight": {
+                                                    "id": "gakiy1a95jtim"
+                                                },
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "x-stoplight": {
+                                                            "id": "r9lud2wakhcvg"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer",
+                                            "x-stoplight": {
+                                                "id": "ld8q8bn6c0sey"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-docs-articles",
+                "description": "docs articles",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "articles"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "1hhmymzgw8wtv"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Article",
+                                            "x-stoplight": {
+                                                "id": "krsldb2aj5ges"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-docs-articles",
+                "description": "Create an account",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ArticleInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "articles"
+                ]
+            },
+            "parameters": []
+        },
+        "/docs/passwords": {
+            "get": {
+                "summary": "Search",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "count": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "get-docs-passwords",
+                "description": "docs passwords",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "passwords"
+                ]
+            },
+            "post": {
+                "summary": "Create",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "kulxpoyi9w6es"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Password",
+                                            "x-stoplight": {
+                                                "id": "oo4jonq36vnxn"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "post-docs-passwords",
+                "description": "Create an article",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PasswordInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "passwords"
+                ]
+            },
+            "parameters": []
+        },
+        "/docs/article/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Article",
+                                            "x-stoplight": {
+                                                "id": "khz1y63fujrq0"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getdoc-article-id",
+                "description": "docs article",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "articles"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchdoc-article-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "7ycbbj52a4wsy"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Article",
+                                            "x-stoplight": {
+                                                "id": "31y2znf5gvf8z"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ArticleEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "articles"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deletedocs-article-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "a41l8rzmsfn9z"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "tags": [
+                    "articles"
+                ]
+            }
+        },
+        "/docs/password/{id}": {
+            "get": {
+                "summary": "View",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "x-examples": {
+                                        "Example 1": {
+                                            "status": true,
+                                            "data": [
+                                                {
+                                                    "id": "62c4fceba36e541d722ffc83"
+                                                },
+                                                {
+                                                    "id": "62ca347370eb5c6c3119b813"
+                                                }
+                                            ],
+                                            "count": 2
+                                        }
+                                    },
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean"
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Password",
+                                            "x-stoplight": {
+                                                "id": "9ojsnptjybv1t"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "operationId": "getdocs-password-id",
+                "description": "docs password",
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "parameters": [],
+                "tags": [
+                    "passwords"
+                ]
+            },
+            "parameters": [
+                {
+                    "schema": {
+                        "type": "string"
+                    },
+                    "name": "id",
+                    "in": "path",
+                    "required": true
+                }
+            ],
+            "patch": {
+                "summary": "Edit",
+                "operationId": "patchdoc-password-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "5h9q40iuaz39q"
+                                            }
+                                        },
+                                        "data": {
+                                            "$ref": "#/components/schemas/Password",
+                                            "x-stoplight": {
+                                                "id": "qa6wyc1s286xo"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PasswordEditInput"
+                            }
+                        }
+                    }
+                },
+                "tags": [
+                    "passwords"
+                ]
+            },
+            "delete": {
+                "summary": "Delete",
+                "operationId": "deletedoc-password-id",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "boolean",
+                                            "x-stoplight": {
+                                                "id": "81g4fdwzsga7t"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "mkey": []
+                    }
+                ],
+                "requestBody": {
+                    "content": {}
+                },
+                "tags": [
+                    "passwords"
+                ]
+            }
+        }
+    },
+    "definitions": {
+        "ArticleType": {
+            "type": "integer",
+            "description": "The type of article",
+            "oneOf": [
+                {
+                    "title": "Public",
+                    "const": 0
+                },
+                {
+                    "title": "Private",
+                    "const": 1
+                }
+            ]
+        }
+    },
+    "components": {
+        "schemas": {
+            "ArticleInput": {
+                "title": "Article Create Input",
+                "x-stoplight": {
+                    "id": "ruosysgn6ehc8"
+                },
+                "type": "object",
+                "x-tags": [
+                    "articles"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Status of the article. active or inactive."
+                    },
+                    "type": {
+                        "$ref": "#/definitions/ArticleType",
+                        "x-stoplight": {
+                            "id": "c8hbveuuw5pvu"
+                        },
+                        "description": "Type of article: 0 = Public, 1 = Private"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the article"
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "Array of attachments IDs associated with the article",
+                        "items": {
+                            "type": "string",
+                            "description": "ID of the attachments associated with the article",
+                            "x-stoplight": {
+                                "id": "idrtvedg0t1du"
+                            }
+                        }
+                    },
+                    "labelIds": {
+                        "type": "array",
+                        "description": "Array of label IDs associated with the article",
+                        "items": {
+                            "type": "string",
+                            "description": "ID of the labels associated with the article",
+                            "x-stoplight": {
+                                "id": "mg1j46h1jipyj"
+                            }
+                        }
+                    },
+                    "revisions": {
+                        "type": "array",
+                        "description": "Array of revisions made to the article",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
+                                    "type": "string",
+                                    "description": "Content of the revision"
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "Date the revision was made"
+                                }
+                            },
+                            "required": [
+                                "content",
+                                "date"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "type",
+                    "title",
+                    "revisions"
+                ]
+            },
+            "PasswordInput": {
+                "title": "Password Create Input",
+                "x-stoplight": {
+                    "id": "hri0rpc7mcr3i"
+                },
+                "type": "object",
+                "x-tags": [
+                    "passwords"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the password entry"
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the password entry is active or inactive"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A description of the password entry"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL associated with the password entry"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "The username for the password entry"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "The encrypted password for the entry"
+                    },
+                    "entity": {
+                        "type": "object",
+                        "x-stoplight": {
+                            "id": "lrnee8a4qjpqc"
+                        },
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "572h2lqh24sfp"
+                                }
+                            },
+                            "type": {
+                                "x-stoplight": {
+                                    "id": "8bshc29ess2nc"
+                                },
+                                "type": "integer",
+                                "description": "An entity that can be referenced by an automation workflow",
+                                "oneOf": [
+                                    {
+                                        "title": "Account",
+                                        "const": 11
+                                    },
+                                    {
+                                        "title": "Allocation",
+                                        "const": 63
+                                    },
+                                    {
+                                        "title": "Article",
+                                        "const": 31
+                                    },
+                                    {
+                                        "title": "Asset",
+                                        "const": 81
+                                    },
+                                    {
+                                        "title": "AssetBundle",
+                                        "const": 83
+                                    },
+                                    {
+                                        "title": "Board",
+                                        "const": 21
+                                    },
+                                    {
+                                        "title": "Category",
+                                        "const": 72
+                                    },
+                                    {
+                                        "title": "Contact",
+                                        "const": 13
+                                    },
+                                    {
+                                        "title": "Email",
+                                        "const": 5
+                                    },
+                                    {
+                                        "title": "Event",
+                                        "const": 4
+                                    },
+                                    {
+                                        "title": "Group",
+                                        "const": 73
+                                    },
+                                    {
+                                        "title": "Invoice",
+                                        "const": 64
+                                    },
+                                    {
+                                        "title": "Label",
+                                        "const": 6
+                                    },
+                                    {
+                                        "title": "Location",
+                                        "const": 12
+                                    },
+                                    {
+                                        "title": "Note",
+                                        "const": 14
+                                    },
+                                    {
+                                        "title": "Notification",
+                                        "const": 3
+                                    },
+                                    {
+                                        "title": "Password",
+                                        "const": 32
+                                    },
+                                    {
+                                        "title": "Payment",
+                                        "const": 65
+                                    },
+                                    {
+                                        "title": "Product",
+                                        "const": 82
+                                    },
+                                    {
+                                        "title": "ProductBundle",
+                                        "const": 84
+                                    },
+                                    {
+                                        "title": "Region",
+                                        "const": 71
+                                    },
+                                    {
+                                        "title": "Service",
+                                        "const": 66
+                                    },
+                                    {
+                                        "title": "Ticket",
+                                        "const": 20
+                                    },
+                                    {
+                                        "title": "UDF",
+                                        "const": 2
+                                    },
+                                    {
+                                        "title": "User",
+                                        "const": 1
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "entityId": {
+                        "type": "string",
+                        "description": "The unique identifier for the entity associated with the password entry"
+                    }
+                },
+                "required": [
+                    "name",
+                    "status",
+                    "username",
+                    "password",
+                    "entityId"
+                ]
+            },
+            "ArticleEditInput": {
+                "title": "Article Edit Input",
+                "x-stoplight": {
+                    "id": "239tkbkq0qnui"
+                },
+                "type": "object",
+                "x-tags": [
+                    "articles"
+                ],
+                "properties": {
+                    "status": {
+                        "type": "boolean",
+                        "description": "Status of the article. active or inactive."
+                    },
+                    "type": {
+                        "$ref": "#/definitions/ArticleType",
+                        "x-stoplight": {
+                            "id": "c8hbveuuw5pvu"
+                        },
+                        "description": "Type of article: 0 = Public, 1 = Private"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the article"
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "Array of attachments IDs associated with the article",
+                        "items": {
+                            "type": "string",
+                            "description": "ID of the attachments associated with the article",
+                            "x-stoplight": {
+                                "id": "1m9xl64whnxlr"
+                            }
+                        }
+                    },
+                    "labelIds": {
+                        "type": "array",
+                        "description": "Array of label IDs associated with the article",
+                        "items": {
+                            "type": "string",
+                            "description": "ID of the labels associated with the article",
+                            "x-stoplight": {
+                                "id": "q10xcaigqd6lr"
+                            }
+                        }
+                    },
+                    "revisions": {
+                        "type": "array",
+                        "description": "Array of revisions made to the article",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
+                                    "type": "string",
+                                    "description": "Content of the revision"
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "Date the revision was made"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "PasswordEditInput": {
+                "title": "Password Edit Input",
+                "x-stoplight": {
+                    "id": "65jzn8qvz1k0o"
+                },
+                "type": "object",
+                "x-tags": [
+                    "passwords"
+                ],
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the password entry"
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the password entry is active or inactive"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A description of the password entry"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL associated with the password entry"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "The username for the password entry"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "The encrypted password for the entry"
+                    },
+                    "entity": {
+                        "type": "object",
+                        "description": "The type of entity for which the password is used (0 = User, 1 = Account)",
+                        "x-stoplight": {
+                            "id": "iq5s4oy3ssdiw"
+                        },
+                        "properties": {
+                            "id": {
+                                "type": "string",
+                                "x-stoplight": {
+                                    "id": "rxm5vovphyqmx"
+                                }
+                            },
+                            "type": {
+                                "$ref": "#/components/schemas/PasswordInput/properties/entity/properties/type",
+                                "x-stoplight": {
+                                    "id": "rah7ibougo1sf"
+                                }
+                            }
+                        }
+                    },
+                    "entityId": {
+                        "type": "string",
+                        "description": "The unique identifier for the entity associated with the password entry"
+                    }
+                }
+            },
+            "Article": {
+                "x-stoplight": {
+                    "id": "krsldb2aj5ges"
+                },
+                "title": "Article",
+                "definitions": {
+                    "ArticleType": {
+                        "type": "integer",
+                        "description": "The type of article",
+                        "oneOf": [
+                            {
+                                "title": "Public",
+                                "const": 0
+                            },
+                            {
+                                "title": "Private",
+                                "const": 1
+                            }
+                        ]
+                    }
+                },
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier of the article",
+                        "readOnly": true
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Status of the article. active or inactive"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/Article/definitions/ArticleType",
+                        "x-stoplight": {
+                            "id": "c8hbveuuw5pvu"
+                        },
+                        "description": "Type of article: 0 = Public, 1 = Private"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the article"
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "Date the article was created"
+                    },
+                    "attachmentIds": {
+                        "type": "array",
+                        "description": "Array of attachments IDs associated with the article",
+                        "items": {
+                            "type": "string",
+                            "description": "ID of the attachments associated with the article",
+                            "x-stoplight": {
+                                "id": "o21lrncdeeip1"
+                            }
+                        }
+                    },
+                    "labelIds": {
+                        "type": "array",
+                        "description": "Array of label IDs associated with the article",
+                        "items": {
+                            "type": "string",
+                            "description": "ID of the labels associated with the article",
+                            "x-stoplight": {
+                                "id": "lh7wjn0aissoi"
+                            }
+                        }
+                    },
+                    "revisions": {
+                        "type": "array",
+                        "description": "Array of revisions made to the article",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "content": {
+                                    "type": "string",
+                                    "description": "Content of the revision"
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time",
+                                    "description": "Date the revision was made"
+                                }
+                            },
+                            "required": [
+                                "content",
+                                "date"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "_id",
+                    "status",
+                    "type",
+                    "title",
+                    "createDate",
+                    "revisions"
+                ]
+            },
+            "Password": {
+                "x-stoplight": {
+                    "id": "oo4jonq36vnxn"
+                },
+                "title": "Password",
+                "type": "object",
+                "properties": {
+                    "_id": {
+                        "type": "string",
+                        "description": "The unique identifier for the password entry"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The name of the password entry"
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "Whether the password entry is active or inactive"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "A description of the password entry"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL associated with the password entry"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "The username for the password entry"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "The encrypted password for the entry"
+                    },
+                    "for": {
+                        "type": "integer",
+                        "description": "The type of entity for which the password is used (0 = User, 1 = Account)",
+                        "enum": [
+                            0,
+                            1
+                        ]
+                    },
+                    "entityId": {
+                        "type": "string",
+                        "description": "The unique identifier for the entity associated with the password entry"
+                    }
+                },
+                "required": [
+                    "_id",
+                    "name",
+                    "status",
+                    "username",
+                    "password",
+                    "for",
+                    "entityId"
+                ]
+            }
+        },
+        "parameters": {
+            "include": {
+                "name": "include",
+                "in": "query",
+                "required": false,
+                "schema": {
+                    "type": "string",
+                    "example": "name,status"
+                },
+                "description": "Comma separated value of the name of fields to include in the search request"
+            }
+        },
+        "securitySchemes": {
+            "mkey": {
+                "name": "mkey",
+                "type": "apiKey",
+                "in": "header",
+                "description": ""
+            }
+        }
+    },
+    "x-internal": false,
+    "tags": [
+        {
+            "name": "articles"
+        },
+        {
+            "name": "passwords"
+        }
+    ]
+}
